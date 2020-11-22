@@ -1,4 +1,48 @@
-  // using d3 for convenience
+var G = {}
+G['entrySource'] = ''
+G['trackingCate'] = 'hk01review2020'
+G['GAPI'] = "https://script.google.com/macros/s/AKfycbx2UQSIMuHI56nSyKeMgUgUnwARxbj8ZUUV_ojyVruIrgxcSXgL/exec"
+
+/**
+ * hk01 Tracking::detectSource
+ * @param {*} callback 
+ */
+function detectSource (callback) {
+  let linkText = window.location.href;
+  console.log(linkText);
+  entrySource = (linkText.match(/#/)) ? linkText.match(/#(.*?)(&|$|\?)/)[1] : 'organic';
+  initialID = (linkText.match(/&id=/)) ? parseInt(linkText.match(/&id=(\d+)/)[1]) : 0;
+  G['entrySource'] = entrySource;
+
+  switch (entrySource) {
+      case 'article':
+      case 'base':
+      case 'issue':
+          break;
+      default:
+          entrySource = 'organic';
+          fireArticlePV(removehash(window.location.href));
+  }
+
+  console.log(entrySource + ' | initialID: ' + initialID);
+
+  fireEvent(`${G['trackingCate']}_landing`, 'view', {
+      'start_mode': entrySource,
+      'anonymous_id': getAnonymousId(),
+      'session_id': getSessionId(),
+      'ts': Date.now()
+  });
+
+  fireMapPV(removehash(window.location.href));
+
+  callback(initialID);
+}
+
+
+
+
+
+// using d3 for convenience
   var main = d3.select("main");
   var scrolly = main.select("#scrolly");
   var figure = scrolly.select("figure");
@@ -57,7 +101,45 @@
     });
   }
 
+  function handleSubmit (e) {
+    e.preventDefault()
+
+    let data = {
+      type: "return",
+      value: getAnonymousId(),
+      q1: $('#q01').val(),
+      q2: $('input[name="q02"]:checked').val(),
+      q3: "q1",
+      q4: "q1",
+      q5: "q1",
+    }
+
+    console.log(data);
+
+
+    fetch(G['GAPI'], {
+      method: 'POST',
+      body: JSON.stringify(data),
+      mode: 'no-cors',
+      credentials: 'include', // include, *same-origin, omit
+      redirect: 'follow',
+      headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+      }
+    }).then(response => {
+      console.log("success:", response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+    return false
+  }
+
   function init() {
+    /**
+     * Scrollma 
+     *
     setupStickyfill();
 
     // 1. force a resize on load to ensure proper dimensions are sent to scrollama
@@ -76,7 +158,33 @@
 
     // setup resize event
     window.addEventListener("resize", handleResize);
+    */
+
+    let data = {
+      type: "annoymous",
+      value: getAnonymousId(),
+      url: "http://testme.com:5500/app2/index.html"
+    }
+
+
+    fetch(G['GAPI'], {
+      method: 'POST',
+      body: JSON.stringify(data),
+      mode: 'no-cors',
+      credentials: 'include', // include, *same-origin, omit
+      redirect: 'follow',
+      headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+      }
+    }).then(response => {
+      console.log("success:", response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+    $("#butnSubmit").on("click", handleSubmit);
   }
 
   // kick things off
-  init();
+  detectSource(init);

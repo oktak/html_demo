@@ -1,23 +1,33 @@
-nav {
-  background-color: azure;
-}
-
-#intro {
-  margin-bottom: 320px;
-}
-
-.graph {
-  width: 100%;
-  position: absolute;
-}
-
+/* Common */
 .hide {
   visibility: hidden;
 }
-
 .show {
   visibility: visible;
 }
+/* Common end */
+
+
+/* Header Nav footer */
+nav {
+  background-color: azure;
+}
+/* Header Nav footer end */
+
+
+/* Section */
+section {
+  padding: 10vh 0;
+  background-color: #DDD;
+}
+section:nth-child(2n) {
+  background-color: #FFF;
+}
+#intro {
+  margin-bottom: 320px;
+}
+/* Section end */
+
 
 /* Scollma */
 #scrolly {
@@ -29,7 +39,6 @@ nav {
 article {
   position: relative;
   padding: 0;
-  max-width: 20rem;
   margin: 0 auto;
 }
 
@@ -81,4 +90,10 @@ figure p {
   font-size: 1.5rem;
   background-color: #3b3b3b;
 }
+
+.graph {
+  width: 100%;
+  position: absolute;
+}
+
 /* Scrollma end */
