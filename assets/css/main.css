@@ -97,3 +97,18 @@ figure p {
 }
 
 /* Scrollma end */
+
+/* Calendar */
+.option_cont {
+  min-width: 320px;
+  width: 60%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.d-flex label {
+  flex-basis: 50%;
+}
+/* Calendar end */

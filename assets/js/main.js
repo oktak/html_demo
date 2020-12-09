@@ -41,7 +41,12 @@ function detectSource (callback) {
 
 
 function chartDonut (chart_id, labels, data, datalabels) {
-  var ctx = document.getElementById(chart_id).getContext('2d');
+  var el = document.getElementById(chart_id);
+  if (!el) {
+    return;
+  }
+  var ctx = el.getContext('2d');
+
   var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'doughnut',
