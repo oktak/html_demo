@@ -110,76 +110,12 @@ const tooltip = d3.select('#tooltip');
     .attr('dominant-baseline', 'middle')
     .attr('font-size', 16)
     .attr('y', cellSize / 2)
-    .text('早上 7 時 45 分天氣預報')
+    .text('關閉狀態')
 
   const forecastLegend = legend.append('g')
     .attr('transform', 'translate(0, ' + (cellSize * 2 + marginSize * 3) + ')');
 
-  forecastLegend.selectAll('rect')
-    .data(d3.range(0, forecastWordMap.domain().length).map(d => d / (forecastWordMap.domain().length)))
-    .enter().append('rect')
-    .attr('x', (_d, i) => (cellSize + labelSize) * i)
-    .attr('y', cellSize + marginSize)
-    .attr('rx', rectRadius)
-    .attr('ry', rectRadius)
-    .attr('width', cellSize)
-    .attr('height', cellSize)
-    .attr('fill', '#cccccc');
-
-  forecastLegend.selectAll('text.cloud')
-  .data(d3.range(0, forecastWordMap.domain().length).map(d => d / (forecastWordMap.domain().length - 1)))
-    .enter().append('text')
-    .classed('fa', true)
-    .classed('cloud', true)
-    .attr('text-anchor', 'middle')
-    .attr('dominant-baseline', 'middle')
-    .attr('fill', 'white')
-    .attr('x', (_d, i) => (cellSize + labelSize) * i + cellSize / 2 )
-    .attr('y', cellSize + marginSize + cellSize / 2)
-    .attr('font-size', d => d * 20 + 10)
-    .text((d) => d > 0 ? '\uf73d' : '')
-
-  forecastLegend.selectAll('text.label')
-  .data(d3.range(0, forecastWordMap.domain().length).map(d => d / (forecastWordMap.domain().length - 1)))
-    .enter().append('text')
-    .classed('label', true)
-    .attr('dominant-baseline', 'middle')
-    .attr('font-size', 12)
-    .attr('x', (_d, i) => (cellSize + labelSize) * i + cellSize + labelPadding )
-    .attr('y', cellSize + marginSize + cellSize / 2)
-    .text((d) => d > 0 ? (d * maxRain).toFixed(0) + ' 毫米' : '無雨')
-
-  forecastLegend.append('text')
-    .attr('dominant-baseline', 'middle')
-    .attr('font-size', 16)
-    .attr('y', cellSize / 2)
-    .text('當日實際落雨量')
-
-  const sliderSimple = d3
-    .sliderBottom()
-    .min(0)
-    .max(2)
-    .width(legendWidth - 40)
-    .tickFormat(d => '大於' + d3.format('.2')(d) + '毫米')
-    .ticks(4)
-    .default(0)
-    .on('onchange', val => {
-      thresold = val;
-      update();
-    });
-
-  legend.append('text')
-    .attr('dominant-baseline', 'middle')
-    .attr('font-size', 16)
-    .attr('y', (cellSize + marginSize) * 5 + cellSize / 2)
-    .text('有雨定義')
-
-  legend
-    .append('g')
-    .attr('transform', `translate(20, ${cellSize * 6 + marginSize * 7})`)
-    .call(sliderSimple);
-
-  // Function that change a color
+    // Function that change a color
   async function changeColor() {
     var radioValue = $("input[name='placeButton']:checked");
     console.log(radioValue.val())
@@ -192,7 +128,7 @@ const tooltip = d3.select('#tooltip');
 
 
   // Event listener to the radio button
-  d3.select("#colorButton").on("change", changeColor )
+  // d3.select("#colorButton").on("change", changeColor )
 
 
   // Drawing Calendars
@@ -452,3 +388,60 @@ const tooltip = d3.select('#tooltip');
   update();
 
 })();
+
+
+$(function () {
+
+  async function makeHeatmap(place) {
+    const maxval = "2020-01-01";
+    let data = await d3.json(`assets/js/json/${place}.json`)
+    let newdata = Object.keys(data).map(o => {
+      if (maxval === o) {
+        return {
+          date: maxval,
+          count: 150
+        }
+      }
+      return {
+        date: o,
+        count: ("" === data[o]) ? 0 : parseInt(data[o], 10) * 50
+      }
+    });
+    let options = {
+      weekStartDay: 7,
+      coloring: "custom",
+      labels: {
+        days: true,
+        months: true,
+        custom: {
+            weekDayLabels: ["日", "一", "二", "三", "四", "五", "六"],
+            monthLabels: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]
+        }
+      },
+      legend: {
+        show: false,
+      },
+      tooltips: {
+          show: false,
+          options: {}
+      }
+    };
+
+    $("#heatmap").remove()
+    $("#colorButton").after('<div id="heatmap" class=""></div>')
+    $("#heatmap").CalendarHeatmap( newdata, options );
+  }
+
+  // Function that change a color
+  async function changeColor2() {
+    var radioValue = $("input[name='placeButton']:checked");
+    // console.log(radioValue.val())
+    makeHeatmap(radioValue.val());
+  }
+
+
+  // Event listener to the radio button
+  d3.select("#colorButton").on("change", changeColor2 );
+  makeHeatmap("酒吧");
+
+});

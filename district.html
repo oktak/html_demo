@@ -65,7 +65,6 @@
 <!-- CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/jquery.CalendarHeatmap.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel='stylesheet' href='assets/css/neve-style.min.css' type='text/css' media='all' />
 <link rel='stylesheet' href='assets/css/neve-inline.css' type='text/css' media='all' />
@@ -78,6 +77,7 @@
 <script src="assets/js/trackEvent.js?v=202011212344test"></script>
 
 <style>
+
 </style>
 </head>
 
@@ -324,130 +324,125 @@
 
 
 
-  <main class="calendar">
-    <section id="banner">
+  <main class="district_landing">
+    <section id="intro">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
-      <div class="color-filter"></div>
       <article class="container">
-        <h1 class="intro__hed">城市停擺</h1>
+        <h1 class="intro__hed">18區疫下輿情</h1>
         <p class="intro__dek">
-
+          透過Facebook上地區群組的討論互動<br>
+          觀察本港疫情民情
         </p>
       </article>
     </section>
-
-    <nav class="inner-page">
-      <div class="container">
-        <a href="district.html">返回上一頁</a>
-        <a href="district-part-5.html">18區互動數據</a>
-      </div>
-    </nav>
 
 
     <section class="main-content">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <article class="container">
-        <p>疫情下為減少人流聚集，不少場所被強制關閉，包括酒吧、戲院、健身中心，甚至連食肆都曾全日禁止堂食。不同處所中，又以曾爆發群組個案的酒吧關閉時間最長，一年中超過半數日子都需提早關門或全日不能營業，而食肆亦有160多天不能全日提供堂食。以下以月曆形式，回顧今年各處所停擺情況。
+        <h3 class="intro__hed">引言</h3>
+
+        <p>港人在疫情陰霾下渡過2020年，口罩戴足一整年仍未得除下，又要熟習在家工作及遙距學習，禁堂食和限聚令等大大改變市民的日常。現實生活中的新常態，在網上空間又是如何反映出來？
         </p>
 
-        <div class="placeshut_cont">
-            <!-- Create the radio button -->
-            <div id="colorButton" class="d-flex option_cont">
-              <label>
-                <input type="radio" name="placeButton" value="健身中心">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-dumbbell"></i> 健身中心</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="公眾娛樂場所">
-                <div class="bg"></div>
-                <span class="plabel">💃 公眾娛樂場所</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="卡啦OK">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-microphone"></i> 卡啦OK</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="夜店或夜總會">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-glass-cheers"></i> 夜店或夜總會</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="戲院">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-film"></i> 戲院</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="按摩院">
-                <div class="bg"></div>
-                <span class="plabel">💆 按摩院</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="泳池">
-                <div class="bg"></div>
-                <span class="plabel">🏊 泳池</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="派對房間">
-                <div class="bg"></div>
-                <span class="plabel">🎉 派對房間</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="浴室">
-                <div class="bg"></div>
-                <span class="plabel">🛀 浴室</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="美容院">
-                <div class="bg"></div>
-                <span class="plabel">💅 美容院</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="遊戲機中心">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-gamepad"></i> 遊戲機中心</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="遊樂場所">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-laugh-squint"></i> 遊樂場所</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="酒吧" checked>
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-beer"></i> 酒吧</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="食肆">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-utensils"></i> 食肆</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="體育處所">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-basketball-ball"></i> 體育處所</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="麻將天九耍樂處所">
-                <div class="bg"></div>
-                <span class="plabel">🀄 麻將天九耍樂處所</span>
-              </label>
-            </div>
-        </div>
+        <p>Facebook上的群組，又稱Group或「谷」，所有成員皆可發文，不似專頁般，僅版主可發布資訊。同時，地區群組所反映的，是可具體至地區、甚至某屋苑維度，提供具社區特色的資訊，比較各區之異。
+        </p>
 
-        <div id="legend"></div>
+        <p>《香港01》透過統計本港378個Facebook地區群組中，今年內的帖子及互動，並分析文本情感，嘗試了解疫下民情：市民如何回應疫情，不同時期下的網絡情緒，網絡討論如何反映市民的急切需要，市民如何利用網絡空間助人自助，以及網上討論究竟是「制止」還是「製造」恐慌、究竟是鼓勵「Fact check」還是加速「假資訊」的傳播？
+        </p>
+
+
       </article>
     </section>
+
+
+    <section id="part-0">
+      <div class="el-background-overlay optml-bg-lazyloaded"></div>
+      <div class="color-filter"></div>
+      <a href="district-part-0.html">
+        <article class="container">
+          <h2 class="intro__hed">
+            今年地區民情
+          </h2>
+        </article>
+      </a>
+    </section>
+
+
+    <section id="part-1">
+      <div class="el-background-overlay optml-bg-lazyloaded"></div>
+      <div class="color-filter"></div>
+      <a href="district-part-1.html">
+        <article class="container">
+          <h2 class="intro__hed">
+            第一波疫情
+          </h2>
+        </article>
+      </a>
+    </section>
+
+
+    <section id="part-2">
+      <div class="el-background-overlay optml-bg-lazyloaded"></div>
+      <div class="color-filter"></div>
+      <a href="district-part-2.html">
+        <article class="container">
+          <h2 class="intro__hed">
+            第二波疫情
+          </h2>
+        </article>
+      </a>
+    </section>
+
+
+    <section id="part-3">
+      <div class="el-background-overlay optml-bg-lazyloaded"></div>
+      <div class="color-filter"></div>
+      <a href="district-part-3.html">
+        <article class="container">
+          <h2 class="intro__hed">
+            第三波疫情
+          </h2>
+        </article>
+      </a>
+    </section>
+
+
+    <section id="part-4">
+      <div class="el-background-overlay optml-bg-lazyloaded"></div>
+      <div class="color-filter"></div>
+      <a href="district-part-4.html">
+        <article class="container">
+          <h2 class="intro__hed">
+            第四波疫情
+          </h2>
+        </article>
+      </a>
+    </section>
+
+
+    <section id="part-5">
+      <div class="el-background-overlay optml-bg-lazyloaded"></div>
+      <div class="color-filter"></div>
+      <a href="district-part-5.html">
+        <article class="container">
+          <h2 class="intro__hed">
+            18區輿情數據
+          </h2>
+        </article>
+      </a>
+    </section>
+
+
+
+
   </main>
 
   <footer></footer>
 </div>
 
 <!-- Vendor -->
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js" integrity="sha512-C2RveGuPIWqkaLAluvoxyiaN1XYNe5ss11urhZWZYBUA9Ydgj+hfGKPcxCzTwut1/fmjEZR7Ac35f2aycT8Ogw==" crossorigin="anonymous"></script>
@@ -455,13 +450,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js" integrity="sha512-dmLpQXesGDP0ZM/s8zGKQU3Xlbix57QfwFNFh+BY5Ad/afObQ/lBo200mHWuHu8LOoI7tlK09yP3L/4DjdQ5Xw==" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/scrollama@2.2.1/build/scrollama.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
 <script src="https://unpkg.com/d3-simple-slider"></script>
-<script src="assets/js/jquery.CalendarHeatmap.min.js"></script>
 
 <script src="assets/js/util.js?v=202002031749"></script>
 <script src="assets/js/main.js" async></script>
-<script src="assets/js/calendar.js" async></script>
+
+
+
+<!-- page specific-->
+<script type='text/javascript' id='neve-script-js-extra'>
+  /* <![CDATA[ */
+  var NeveProperties = {
+    "ajaxurl": "0000",
+    "nonce": "0000",
+    "isRTL": "",
+    "isCustomize": ""
+  };
+  /* ]]> */
+</script>
+
+<script type='text/javascript'
+src='assets/js/frontend.js?ver=2.9.1'
+id='neve-script-js' async></script>
 </body>
 </html>

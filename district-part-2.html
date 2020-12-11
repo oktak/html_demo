@@ -65,7 +65,6 @@
 <!-- CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/jquery.CalendarHeatmap.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel='stylesheet' href='assets/css/neve-style.min.css' type='text/css' media='all' />
 <link rel='stylesheet' href='assets/css/neve-inline.css' type='text/css' media='all' />
@@ -78,6 +77,7 @@
 <script src="assets/js/trackEvent.js?v=202011212344test"></script>
 
 <style>
+
 </style>
 </head>
 
@@ -324,12 +324,12 @@
 
 
 
-  <main class="calendar">
+  <main class="district_part_2">
     <section id="banner">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <div class="color-filter"></div>
       <article class="container">
-        <h1 class="intro__hed">城市停擺</h1>
+        <h1 class="intro__hed">第二波疫情</h1>
         <p class="intro__dek">
 
         </p>
@@ -347,107 +347,71 @@
     <section class="main-content">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <article class="container">
-        <p>疫情下為減少人流聚集，不少場所被強制關閉，包括酒吧、戲院、健身中心，甚至連食肆都曾全日禁止堂食。不同處所中，又以曾爆發群組個案的酒吧關閉時間最長，一年中超過半數日子都需提早關門或全日不能營業，而食肆亦有160多天不能全日提供堂食。以下以月曆形式，回顧今年各處所停擺情況。
+        <h3 class="intro__hed">第二波疫情：跪地用餐　網民見打工仔遍地開餐感心酸</h3>
+
+        <p>而隨着疫情發展，市民的關注點會有所轉變。3月下旬，酒吧爆發群組個案，同月底「限聚令」首度生效，不允許多於四人的群組聚集；而食肆「限座令」、「禁堂食令」等亦相繼推出。
         </p>
 
-        <div class="placeshut_cont">
-            <!-- Create the radio button -->
-            <div id="colorButton" class="d-flex option_cont">
-              <label>
-                <input type="radio" name="placeButton" value="健身中心">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-dumbbell"></i> 健身中心</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="公眾娛樂場所">
-                <div class="bg"></div>
-                <span class="plabel">💃 公眾娛樂場所</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="卡啦OK">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-microphone"></i> 卡啦OK</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="夜店或夜總會">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-glass-cheers"></i> 夜店或夜總會</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="戲院">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-film"></i> 戲院</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="按摩院">
-                <div class="bg"></div>
-                <span class="plabel">💆 按摩院</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="泳池">
-                <div class="bg"></div>
-                <span class="plabel">🏊 泳池</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="派對房間">
-                <div class="bg"></div>
-                <span class="plabel">🎉 派對房間</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="浴室">
-                <div class="bg"></div>
-                <span class="plabel">🛀 浴室</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="美容院">
-                <div class="bg"></div>
-                <span class="plabel">💅 美容院</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="遊戲機中心">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-gamepad"></i> 遊戲機中心</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="遊樂場所">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-laugh-squint"></i> 遊樂場所</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="酒吧" checked>
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-beer"></i> 酒吧</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="食肆">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-utensils"></i> 食肆</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="體育處所">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-basketball-ball"></i> 體育處所</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="麻將天九耍樂處所">
-                <div class="bg"></div>
-                <span class="plabel">🀄 麻將天九耍樂處所</span>
-              </label>
-            </div>
+        <p class="decoration text-center">🧍←→🧍
+        </p>
+
+        <p>事實上，「限聚令」推出首週（3月29至4月2日），地區群組上回響並不多，相關討論僅30多則。該週，較多人互動的帖子，多是轉發傳媒報導對有人違反「限聚令」，在北區圍村舉行逾百人出席的婚宴，又或是關於「黃店」在短時間內兩度因「限聚令」而被巡查，網民反應以「畀嬲」為主。
+        </p>
+
+        <div class="iframe_cont">
+          <div class="flourish-embed flourish-chart" data-src="visualisation/4586806"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
         </div>
 
-        <div id="legend"></div>
+        <p>而有關「限聚令」中的討論，不少是關於警方執法，全年最多互動的「限聚令」帖子中，是有關8月4日有人在大埔工業園示威反對開設檢測新冠病毒的火眼實驗室，警方以「限聚令」，警方以「限聚令」票控現場人士。此外，有人關注「限聚令」下，外賣餐盒所引致的環境問題，於是發帖分享為同事準備午餐的點滴，亦獲不少人關注。
+        </p>
+
+        <p>此外，有帖子頗具前瞻性地指出，「實行強制外出戴口罩令，比起禁四人聚 會令應更有抗疫力……」事實上，政府至7月中才推出俗稱「口罩令」的第599I章《預防及控制疾病(佩戴口罩)規例》。
+        </p>
+
+        <p class="decoration text-center">🍽️ 🍽️ 🍽️
+        </p>
+
+        <p>及至6月中旬，本港疫情有所緩和，政府一度將「限聚令」放寬至50人，惟至7月本地爆發第三波疫情，社交距離措施再度收緊，更一度全日禁堂食，打工仔「遍地開餐」，甚至有長者跪在地上進食的照片傳遍網絡世界。全日禁堂食令僅維持兩日便迅速撒下，該週（7月29日至8月4日）地區群組上，不少人轉發傳媒所拍攝的遍地開餐照片，表示心酸或憤怒。
+        </p>
+
+        <div class="iframe_cont">
+          <div class="flourish-embed flourish-chart" data-src="visualisation/4586917"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        </div>
+
+        <p>這些照片似乎十分牽動網民的情緒，這一週內的「慘慘」比例明顯較高，達12%（佔包括Like、Angry等在內的心情互動，不包括轉發、評論），遠較一般水平的6.3%為高。此外，全日禁堂食當日，有酒店、教會自發開放場地供市民用膳，獲得不少好評。
+        </p>
+
+        <div class="iframe_cont">
+          <div class="flourish-embed flourish-chart" data-src="visualisation/4631980"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        </div>
+
+        <p>7月中，第三波疫情急速惡化，連續多天單日錄得逾百宗確診，病毒更殺入安老院舍，奪近百人性命。其後，政府推出臨時醫院、全民檢測等大型措施，惟亦惹來爭議。
+        </p>
+
+        <p>對於這類較具爭議性的議題，不同地區又會有哪些不同的反應？以下亦將嘗試
+          <a href="district-part-5.html">比較香港18區的地區群組中，不同的討論和情緒。</a>
+        </p>
       </article>
     </section>
+
+
+    <section class="ending">
+      <article class="container">
+        <p>
+          <a href="district-part-3.html">下一頁：第三波疫情</a>
+        </p>
+      </article>
+    </section>
+
+
+
   </main>
 
   <footer></footer>
 </div>
 
 <!-- Vendor -->
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js" integrity="sha512-C2RveGuPIWqkaLAluvoxyiaN1XYNe5ss11urhZWZYBUA9Ydgj+hfGKPcxCzTwut1/fmjEZR7Ac35f2aycT8Ogw==" crossorigin="anonymous"></script>
@@ -455,13 +419,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js" integrity="sha512-dmLpQXesGDP0ZM/s8zGKQU3Xlbix57QfwFNFh+BY5Ad/afObQ/lBo200mHWuHu8LOoI7tlK09yP3L/4DjdQ5Xw==" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/scrollama@2.2.1/build/scrollama.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
 <script src="https://unpkg.com/d3-simple-slider"></script>
-<script src="assets/js/jquery.CalendarHeatmap.min.js"></script>
 
 <script src="assets/js/util.js?v=202002031749"></script>
 <script src="assets/js/main.js" async></script>
-<script src="assets/js/calendar.js" async></script>
+
+
+
+<!-- page specific-->
+<script type='text/javascript' id='neve-script-js-extra'>
+  /* <![CDATA[ */
+  var NeveProperties = {
+    "ajaxurl": "0000",
+    "nonce": "0000",
+    "isRTL": "",
+    "isCustomize": ""
+  };
+  /* ]]> */
+</script>
+
+<script type='text/javascript'
+src='assets/js/frontend.js?ver=2.9.1'
+id='neve-script-js' async></script>
 </body>
 </html>

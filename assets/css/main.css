@@ -5,26 +5,40 @@
 .show {
   visibility: visible;
 }
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  color: #333333;
+}
 /* Common end */
 
 
 /* Header Nav footer */
-nav {
-  background-color: azure;
+nav.inner-page {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+nav.inner-page a {
+  padding: .2rem .5rem;
 }
 /* Header Nav footer end */
 
 
 /* Section */
 section {
+  min-height: 400px;
   padding: 10vh 0;
-  background-color: #DDD;
+  position: relative;
+  opacity: 0.84;
+  background-color: #FFF;
 }
 section:nth-child(2n) {
   background-color: #FFF;
 }
 #intro {
   margin-bottom: 320px;
+}
+section.ending {
+  min-height: 0;
 }
 /* Section end */
 
@@ -111,4 +125,102 @@ figure p {
 .d-flex label {
   flex-basis: 50%;
 }
+
+#heatmap {
+  text-align: center;
+}
+
+.custom-0 {
+  background-color: #c8d7e1 !important; /* #c8d7e1 */
+}
+.custom-1 {
+  background-color: #a6c96a !important;
+}
+.custom-2 {
+  background-color: #666666 !important; /* #5cb85c */
+}
+.custom-3 {
+  background-color: #000000 !important; /* #00753a */
+}
+.custom-4 {
+  background-color: #c8d7e1 !important; /* #c8d7e1 */
+}
+
+.placeshut_cont label {
+  position: relative;
+}
+.placeshut_cont input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+.placeshut_cont input ~ div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.placeshut_cont input:checked ~ div {
+  background-color: #5cb85c;
+}
+.plabel {
+  padding: 0 1rem;
+  display: block;
+  position: relative;
+  z-index: 10;
+  text-align: left;
+}
+
+@media screen and (max-width: 500px) {
+  #heatmap {
+    width: 800px;
+    height: 100px;
+    margin: 210px 0 0;
+    transform: rotate(90deg);
+    transform-origin: 100% 0;
+    float: right;
+  }
+  .d-flex label {
+    flex-basis: 100%;
+  }
+  .placeshut_cont {
+    overflow: hidden;
+  }
+  #colorButton {
+    min-width: 0;
+    width: 55%;
+    float: left;
+  }
+  .plabel {
+    padding: 0;
+  }
+  .ch-month {
+    transform: scale(1,-1);
+  }
+  .ch-month-label {
+    transform: scale(-1,1) rotate(90deg);
+  }
+  .ch-week-labels {
+    transform: scale(1,-1);
+  }
+  .ch-day-label {
+    transform: scale(-1,1) rotate(90deg);
+  }
+}
 /* Calendar end */
+
+/* header */
+#header-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 110;
+  width: 100%;
+}
+header ~ main {
+  padding-top: 80px;
+}
+/* header end */

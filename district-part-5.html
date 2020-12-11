@@ -65,7 +65,6 @@
 <!-- CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/jquery.CalendarHeatmap.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel='stylesheet' href='assets/css/neve-style.min.css' type='text/css' media='all' />
 <link rel='stylesheet' href='assets/css/neve-inline.css' type='text/css' media='all' />
@@ -78,6 +77,7 @@
 <script src="assets/js/trackEvent.js?v=202011212344test"></script>
 
 <style>
+
 </style>
 </head>
 
@@ -324,12 +324,12 @@
 
 
 
-  <main class="calendar">
+  <main class="district_part_5">
     <section id="banner">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <div class="color-filter"></div>
       <article class="container">
-        <h1 class="intro__hed">城市停擺</h1>
+        <h1 class="intro__hed">18區互動輿情數據</h1>
         <p class="intro__dek">
 
         </p>
@@ -347,107 +347,138 @@
     <section class="main-content">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <article class="container">
-        <p>疫情下為減少人流聚集，不少場所被強制關閉，包括酒吧、戲院、健身中心，甚至連食肆都曾全日禁止堂食。不同處所中，又以曾爆發群組個案的酒吧關閉時間最長，一年中超過半數日子都需提早關門或全日不能營業，而食肆亦有160多天不能全日提供堂食。以下以月曆形式，回顧今年各處所停擺情況。
-        </p>
+        <h3 class="intro__hed">18區互動輿情數據</h3>
 
-        <div class="placeshut_cont">
-            <!-- Create the radio button -->
-            <div id="colorButton" class="d-flex option_cont">
-              <label>
-                <input type="radio" name="placeButton" value="健身中心">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-dumbbell"></i> 健身中心</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="公眾娛樂場所">
-                <div class="bg"></div>
-                <span class="plabel">💃 公眾娛樂場所</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="卡啦OK">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-microphone"></i> 卡啦OK</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="夜店或夜總會">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-glass-cheers"></i> 夜店或夜總會</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="戲院">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-film"></i> 戲院</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="按摩院">
-                <div class="bg"></div>
-                <span class="plabel">💆 按摩院</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="泳池">
-                <div class="bg"></div>
-                <span class="plabel">🏊 泳池</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="派對房間">
-                <div class="bg"></div>
-                <span class="plabel">🎉 派對房間</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="浴室">
-                <div class="bg"></div>
-                <span class="plabel">🛀 浴室</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="美容院">
-                <div class="bg"></div>
-                <span class="plabel">💅 美容院</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="遊戲機中心">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-gamepad"></i> 遊戲機中心</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="遊樂場所">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-laugh-squint"></i> 遊樂場所</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="酒吧" checked>
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-beer"></i> 酒吧</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="食肆">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-utensils"></i> 食肆</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="體育處所">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-basketball-ball"></i> 體育處所</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="麻將天九耍樂處所">
-                <div class="bg"></div>
-                <span class="plabel">🀄 麻將天九耍樂處所</span>
-              </label>
-            </div>
+        <p>1. 疫情各議題18區討論熱度趨勢</p>
+
+        <div class="iframe_cont">
+          <div class="flourish-embed" data-src="story/677367"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
         </div>
 
-        <div id="legend"></div>
+        
       </article>
     </section>
+
+
+    <section class="main-content">
+      <div class="el-background-overlay optml-bg-lazyloaded"></div>
+      <article class="container">
+        <p>2. 18區全年心情互動分布</p>
+
+        <div class="iframe_cont">
+          <div class="flourish-embed flourish-heatmap" data-src="visualisation/4632171"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        </div>
+
+        
+      </article>
+    </section>
+
+
+    <section class="main-content">
+      <div class="el-background-overlay optml-bg-lazyloaded"></div>
+      <article class="container">
+        <p>3. 18區高頻詞</p>
+
+        <div class="iframe_cont">
+          <iframe scrolling="no" title="Interactive or visual content" sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" style="width: 100%; height: 748px;" src="https://infogram.com/test-1hxj48ppm1x152v?live" frameborder="0"></iframe>
+        </div>
+
+        
+      </article>
+    </section>
+
+
+
+    <section class="main-content" id="sentiment">
+      <div class="el-background-overlay optml-bg-lazyloaded"></div>
+      <article class="container">
+        <h2 class="intro__hed">18區輿情數據</h2>
+
+        <p>利用文本情感分析工具（PaddleNLP），可得出每則帖子的情感值（由0到1）。數值越大，文情訊息則越正面；數值越小，則越負面。從下圖可見，普遍地區內網上群組中，帖子訊息的情感值分布多集中在左右兩端，即文本情感較兩極化。
+        </p>
+
+        <div class="select_cont">
+          <select class="select_option district" name="view_district">
+            <option value="-" selected>選擇查看各區</option>
+            <option value="HKI" disabled>香港島</option>
+            <option value="A">中西區</option>
+            <option value="B">灣仔區</option>
+            <option value="C">東區</option>
+            <option value="D">南區</option>
+
+            <option value="KLN" disabled>九龍</option>
+            <option value="E">油尖旺區</option>
+            <option value="F">深水埗區</option>
+            <option value="G">九龍城區</option>
+            <option value="H">黃大仙區</option>
+            <option value="J">觀塘區</option>
+
+            <option value="NT" disabled>新界</option>
+            <option value="K">荃灣區</option>
+            <option value="L">屯門區</option>
+            <option value="M">元朗區</option>
+            <option value="N">北區</option>
+            <option value="P">大埔區</option>
+            <option value="Q">西貢區</option>
+            <option value="R">沙田區</option>
+            <option value="S">葵青區</option>
+            <option value="T">離島區</option>
+          </select>
+        </div>
+
+        <div class="sentiment_cont">
+          <div id="district_senta">
+            <img class="senta_img" src="/html_demo/assets/img/output_A.png" alt="中西區" />
+          </div>
+        </div>
+      </article>
+    </section>
+
+
+
+
+
+    <section class="main-content">
+      <div class="el-background-overlay optml-bg-lazyloaded"></div>
+      <article class="container">
+        <p>附註：</p>
+
+        <ul>
+          <li>全年統計截至12月15日
+          </li>
+
+          <li>透過Crowdtangle收集公開群組的帖子內容
+          </li>
+
+          <li>由於權限及私隱關係，統計範圍限於公開群組，且不包括有特定主題或用途的群組，如換物、飲食等群組。
+          </li>
+
+          <li>多數人在網上留下一句評論、按下一個讚時，不一定會深思熟慮，因此社交媒體不一定能提供準確獨到的解讀，但這種隨意性亦或多或少反映市民的真實感受，故請讀者斟酌理解。
+          </li>
+        </ul>
+
+        
+      </article>
+    </section>
+
+
+    <section class="">
+      <article class="container">
+        <p>
+          <a href="calendar.html">下一頁：城市停擺</a>
+        </p>
+      </article>
+    </section>
+
+
+
   </main>
 
   <footer></footer>
 </div>
 
 <!-- Vendor -->
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js" integrity="sha512-C2RveGuPIWqkaLAluvoxyiaN1XYNe5ss11urhZWZYBUA9Ydgj+hfGKPcxCzTwut1/fmjEZR7Ac35f2aycT8Ogw==" crossorigin="anonymous"></script>
@@ -455,13 +486,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js" integrity="sha512-dmLpQXesGDP0ZM/s8zGKQU3Xlbix57QfwFNFh+BY5Ad/afObQ/lBo200mHWuHu8LOoI7tlK09yP3L/4DjdQ5Xw==" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/scrollama@2.2.1/build/scrollama.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
 <script src="https://unpkg.com/d3-simple-slider"></script>
-<script src="assets/js/jquery.CalendarHeatmap.min.js"></script>
 
 <script src="assets/js/util.js?v=202002031749"></script>
 <script src="assets/js/main.js" async></script>
-<script src="assets/js/calendar.js" async></script>
+<script src="assets/js/senta.js" async></script>
+
+
+
+<!-- page specific-->
+<script type='text/javascript' id='neve-script-js-extra'>
+  /* <![CDATA[ */
+  var NeveProperties = {
+    "ajaxurl": "0000",
+    "nonce": "0000",
+    "isRTL": "",
+    "isCustomize": ""
+  };
+  /* ]]> */
+</script>
+
+<script type='text/javascript'
+src='assets/js/frontend.js?ver=2.9.1'
+id='neve-script-js' async></script>
 </body>
 </html>

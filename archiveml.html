@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/g/d3js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/newsdev/archieml-js/master/archieml.js"></script>
+    <style>
+      /* @import "app.css"; */
+    </style>
+  </head>
+  <body>
+    <script id="archie" type="text/archieml">
+      [array]
+      * first
+      * second2
+      * third
+    </script>
+    
+    <script type="text/javascript">
+      ;(function(){
+            
+        var update = d3.select('body').append('ol')
+          .selectAll('li')
+          .data( function(){
+            var markup = d3.select('#archie').text();
+            return archieml.load( markup )['array'];
+          })
+          .enter()
+          .append('li')
+          .text( function(d){ return d; });
+        
+        
+      })();
+    </script>
+    <!-- <script type="text/javascript" src="collapsible-tree.js"></script> -->
+  </body>
+</html>

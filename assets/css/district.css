@@ -1,0 +1,152 @@
+.el-background-overlay {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.district_landing {
+  color: #333333;
+  /* text-shadow: 3px 3px 5px #333; */
+}
+
+.district_landing section {
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  /* mix-blend-mode: overlay; */
+  /* transition: background 0.3s, border-radius 0.3s, opacity 0.3s; */
+}
+
+#banner .container,
+.district_landing :not(#intro):not(.main-content) .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.district_landing section a {
+  width: 100%;
+  height: 100%;
+  padding: 10vh 0;
+  display: block;
+  position: absolute;
+  text-decoration: none;
+}
+.color-filter {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background-image: radial-gradient(rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0));
+  background-position: 50% 50%;
+}
+
+.district_landing #intro {
+  margin: 0;
+  padding: 10vh 0;
+}
+
+.district_landing #intro ~ section h2 {
+  text-align: center;
+  color: #333333;
+  /* text-shadow: 3px 3px 5px #333; */
+}
+
+#banner {
+  min-height: 160px;
+  height: 160px;
+  padding: 0;
+  text-align: center;
+}
+
+.main-content .container {
+  max-width: 750px;
+}
+
+.decoration {
+  font-size: 1.8rem;
+}
+
+/* Landing Specific */
+.district_landing #intro .el-background-overlay {
+  background-image: url("/html_demo/assets/img/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  opacity: 1;
+  /* mix-blend-mode: overlay; */
+  /* transition: background 0.3s, border-radius 0.3s, opacity 0.3s; */
+}
+
+.district_landing #part-0 .el-background-overlay {
+  background-image: url("/html_demo/assets/img/part0_400.jpg");
+}
+
+.district_landing #part-1 .el-background-overlay {
+  background-image: url("/html_demo/assets/img/part1_400.jpg");
+}
+
+.district_landing #part-2 .el-background-overlay {
+  background-image: url("/html_demo/assets/img/part2_400.jpg");
+}
+
+.district_landing #part-3 .el-background-overlay {
+  background-image: url("/html_demo/assets/img/part3_400.jpg");
+}
+
+.district_landing #part-4 .el-background-overlay {
+  background-image: url("/html_demo/assets/img/part4_400.jpg");
+}
+
+.district_landing #part-5 .el-background-overlay {
+  background-image: url("/html_demo/assets/img/part5_400.jpg");
+}
+/* Landing Specific end */
+
+/* Banner Specific */
+.district_part_0 #banner .el-background-overlay {
+  background-image: url("/html_demo/assets/img/part0_160.jpg");
+}
+
+.district_part_1 #banner .el-background-overlay {
+  background-image: url("/html_demo/assets/img/part1_160.jpg");
+}
+
+.district_part_2 #banner .el-background-overlay {
+  background-image: url("/html_demo/assets/img/part2_160.jpg");
+}
+
+.district_part_3 #banner .el-background-overlay {
+  background-image: url("/html_demo/assets/img/part3_160.jpg");
+}
+
+.district_part_4 #banner .el-background-overlay {
+  background-image: url("/html_demo/assets/img/part4_160.jpg");
+}
+
+.district_part_5 #banner .el-background-overlay {
+  background-image: url("/html_demo/assets/img/part5_160.jpg");
+}
+/* Banner Specific end */
+
+/* Interactive */
+.select_cont {
+  margin: 2rem auto;
+  text-align: center;
+}
+.select_option {
+  height: 2.8rem;
+  font-size: 1.2rem;
+}
+.sentiment_cont {
+  min-width: 320px;
+  max-width: 750px;
+  width: 70%;
+  margin: 0 auto;
+}
+/**/

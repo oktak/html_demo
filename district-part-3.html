@@ -65,7 +65,6 @@
 <!-- CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/jquery.CalendarHeatmap.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel='stylesheet' href='assets/css/neve-style.min.css' type='text/css' media='all' />
 <link rel='stylesheet' href='assets/css/neve-inline.css' type='text/css' media='all' />
@@ -78,6 +77,7 @@
 <script src="assets/js/trackEvent.js?v=202011212344test"></script>
 
 <style>
+
 </style>
 </head>
 
@@ -324,12 +324,12 @@
 
 
 
-  <main class="calendar">
+  <main class="district_part_2">
     <section id="banner">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <div class="color-filter"></div>
       <article class="container">
-        <h1 class="intro__hed">城市停擺</h1>
+        <h1 class="intro__hed">第三波疫情</h1>
         <p class="intro__dek">
 
         </p>
@@ -347,107 +347,148 @@
     <section class="main-content">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <article class="container">
-        <p>疫情下為減少人流聚集，不少場所被強制關閉，包括酒吧、戲院、健身中心，甚至連食肆都曾全日禁止堂食。不同處所中，又以曾爆發群組個案的酒吧關閉時間最長，一年中超過半數日子都需提早關門或全日不能營業，而食肆亦有160多天不能全日提供堂食。以下以月曆形式，回顧今年各處所停擺情況。
+        <h3 class="intro__hed">第三波疫情：全民檢測惹爭議</h3>
+
+        <p>夏天第三波疫情急速惡化，連續多天單日錄得逾百宗確診，病毒更殺入安老院舍，奪近百人性命。其後，政府推出臨時醫院、全民檢測等大型措施，惟亦惹來爭議。
         </p>
 
-        <div class="placeshut_cont">
-            <!-- Create the radio button -->
-            <div id="colorButton" class="d-flex option_cont">
-              <label>
-                <input type="radio" name="placeButton" value="健身中心">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-dumbbell"></i> 健身中心</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="公眾娛樂場所">
-                <div class="bg"></div>
-                <span class="plabel">💃 公眾娛樂場所</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="卡啦OK">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-microphone"></i> 卡啦OK</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="夜店或夜總會">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-glass-cheers"></i> 夜店或夜總會</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="戲院">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-film"></i> 戲院</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="按摩院">
-                <div class="bg"></div>
-                <span class="plabel">💆 按摩院</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="泳池">
-                <div class="bg"></div>
-                <span class="plabel">🏊 泳池</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="派對房間">
-                <div class="bg"></div>
-                <span class="plabel">🎉 派對房間</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="浴室">
-                <div class="bg"></div>
-                <span class="plabel">🛀 浴室</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="美容院">
-                <div class="bg"></div>
-                <span class="plabel">💅 美容院</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="遊戲機中心">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-gamepad"></i> 遊戲機中心</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="遊樂場所">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-laugh-squint"></i> 遊樂場所</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="酒吧" checked>
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-beer"></i> 酒吧</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="食肆">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-utensils"></i> 食肆</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="體育處所">
-                <div class="bg"></div>
-                <span class="plabel"><i class="fas fa-basketball-ball"></i> 體育處所</span>
-              </label>
-              <label>
-                <input type="radio" name="placeButton" value="麻將天九耍樂處所">
-                <div class="bg"></div>
-                <span class="plabel">🀄 麻將天九耍樂處所</span>
-              </label>
-            </div>
+        <p>對於這類較具爭議性的議題，不同地區又會有哪些不同的反應？以下亦將嘗試比較香港18區的地區群組中，不同的討論和情緒。
+        </p>
+
+        <p class="decoration text-center">👃 👃 👃
+        </p>
+
+        <h4>市民不滿檢測中心選址　鄰避效應稍現</h4>
+
+        <p>疫情影響本港大半年之後，政府在9月推出俗稱全民檢測的「普及社區檢測計劃」，最初為期兩週，由市民自願參與。當時市民反應較為兩極化，最終有178萬市民參與檢測。在地區群組中，最早於7月開始相關討論，有建制政黨開始倡議由內地專家協助本港推行全民檢測，相關報導由網民轉發至
+          <a href="https://www.facebook.com/groups/125933785285/permalink/10157021139035286" target="_blank" rel="noopener">群組</a>
+          ，而網民反應則較為負面，帖子收到不少「嬲嬲」。
+        </p>
+
+        <p>分區比較網民對全民檢測的討論，東區、深水埗、元朗、西貢三區的網民發出「嬲嬲」的比例最高（可達三成，計算方法為「嬲嬲」次數佔所有心情互動次數的比例）。
+          <a href="https://www.facebook.com/groups/725868354498300/permalink/1029762630775536" target="_blank" rel="noopener">東區</a>
+          和
+          <a href="https://www.facebook.com/groups/407801399869589/permalink/652610862055307" target="_blank" rel="noopener">深水埗區</a>
+          最多「嬲嬲」的帖子，均有關市民不滿當區檢測中心的選址，怕做成感染，這或顯示該些地區有輕微的「鄰避效應」。而
+          <a href="https://www.facebook.com/groups/2478150805789808/permalink/2717749538496599" target="_blank" rel="noopener">西貢區</a>
+          最多「嬲嬲」的帖子則是關於該區的尚德社區會堂，預約幾近爆滿，而當時該區出現多個確診個案。
+        </p>
+
+        <div class="iframe_cont">
+          <div class="flourish-embed flourish-map" data-src="visualisation/4557699"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
         </div>
 
-        <div id="legend"></div>
+        <p>而有趣的是，上述四區涵蓋家庭月入中位數達3.4萬元、區內有不少中產屋苑的東區，同時又包括月入中位數全港最低的深水涉區，對這個話題的反彈可謂跨階層。
+        </p>
+
+        <p>事實上，今年內所有提及「全民檢測」的3,200多則帖中，有逾1.8萬「嬲嬲」，而Like亦有逾2萬個，惟獲得較多讚的帖子，普遍是質疑相關計劃的效用。
+        </p>
+
+        <p>計劃推出前，特首林鄭月娥曾批評指，有「所謂專家、醫生」抹黑全民檢測計劃，是政治計算。當時，有帖子轉發前線醫生的訪問，指因不掌握計劃細節，難以推薦病人參加檢測，籲政府對反對聲音不要太敏感。帖子即獲不少網民按讚。此外，網上討論亦可見，不少人混淆「鼻咽」及「鼻腔加咽喉」兩種採樣，這或許側面反映出，政府對計劃解說不多，無法釋除市民疑慮之餘，亦難似號召更多人參與。
+        </p>
+
+        <p class="decoration text-center">🔣 🔣 🔣
+        </p>
+
+        <h4>長期話題健康碼
+        </h4>
+
+        <p>此外，健康碼亦是地區群組上一個歷久不衰的話題，雖然港府實際尚未有推行健康碼，但網上不少人會將健康碼和全民檢測一同討論，因檢測就是取得健康碼的一大前題。事實上，全年最多健康碼帖子的一天，就是特首林鄭月娥宣布將推行全民檢測的8月21日，林鄭在同一場合並提及7月初中央政府已同意通過程序，善用「健康碼」予港澳兩地居民往返內地。
+        </p>
+
+        <div class="iframe_cont">
+          <div class="flourish-embed flourish-map" data-src="visualisation/4558221"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        </div>
+
+        <p>而互動最熱列的是8月12日。當日有建制政黨提倡，市民必須有健康碼，才可進入食肆。相關報導同時出現在多個群組，惹來不少「嬲嬲」。而年初3月24日有媒體報導，自年初開封城的武漢宣布於4月8日正式解封，同時發現當日由武漢往香港的高鐵車票全數售罄，報導當時亦引來大量討論。
+        </p>
+
+        <div class="iframe_cont">
+          <div class="flourish-embed flourish-chart" data-src="visualisation/4557306"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        </div>
+
+        <p>比較不同議題，健康碼可謂最「惹嬲」，全年「嬲嬲」互動比例高至46%。而分區比較，廣泛地區中，「嬲嬲」比例均甚高，多達11區比例超過四成。
+        </p>
+
+        <p class="decoration text-center">✈️ ✈️ ✈️
+        </p>
+
+        <h4>封關爭議　網上討論亦熾熱
+        </h4>
+
+        <p>而時間又回到年初，疫情早期醫護發動罷工，要求政府「封關」。市民早期對疫情的討論更為熾熱，而封關又是時事熱點，帶動大量網上討論。
+        </p>
+
+        <p>與全民檢測及健康碼類似，談及封關便「吸嬲」。分區比較，油尖旺、中西區、元朗、大埔、東區及深水埗六區內的網民，較多對這個話題「畀嬲」。
+        </p>
+
+        <div class="iframe_cont">
+          <div class="flourish-embed flourish-map" data-src="visualisation/4557536"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        </div>
+
+        <p>其中，中西區及大埔的地區群組的會員規模較為龐大，有關封關的帖子亦不少，分別有3,000多則及1.2萬則。群組內有人
+          <a href="https://www.facebook.com/groups/12786375244/permalink/10163106422740245" target="_blank" rel="noopener">發帖</a>
+          邀請網民猜政府會否封關，不少人回覆「嬲嬲」，認為政府不會正面回應醫護的封關訴求。由此可見，不少市民對封關雖有較殷切的訴求，但亦未有太多期望。
+        </p>
+
+        <p class="decoration text-center">⛰️ ⛰️ ⛰️
+        </p>
+
+        <h4>疫區慈雲山：街坊分享當區有用資訊　制止恐慌
+        </h4>
+
+        <p>第三波疫情，由彩虹一帶開始出現食肆群組個案，其後擴散至慈雲山。7至8月間，慈雲山區內普遍住宅大廈都曾錄得確診個案，商場食肆均出現個案群組，病毒更殺入該區護老中心，做成嚴重傷亡。區內疫情由7月初持續至8月初，慈雲山終再次錄得零確診。慈雲山及彩虹均位處黃大仙區，當區Facebook地區群組今年7月的互動量高達17.7萬，較全年平均每月約7萬次互動，高一倍有多。
+        </p>
+
+        <div class="iframe_cont">
+          <div class="flourish-embed flourish-chart" data-src="visualisation/4586262"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        </div>
+
+        <p>在區內疫情最嚴峻之時，地區群組亦起到甚為重要的作用：居民可就區內的獨特情況交換資訊，例如早於7月中便有人
+          <a href="https://www.facebook.com/groups/938631536168133/permalink/3541583905872870" target="_blank" rel="noopener">轉發地圖</a>
+          ，標示出慈雲山的出現確診個案的大廈，較主流媒體快了數天，可見地區群組更專注討論當區大小事，能提供更快且更切合該區所需的資訊。
+        </p>
+
+        <p>當時，慈雲山因「疫廈」林立，不少打工仔因所住大廈出現個案，需有陰性檢測結果才可上班，然而其時社區檢測尚未完善，檢測機會不多。有人
+          <a href="https://www.facebook.com/photo.php?fbid=10158503785573638&set=gm.3541207955910465&type=3" target="_blank" rel="noopener">整合</a>
+          自己向大廈物業管理、衞生防護中心、診所等多方詢問的過程，寫作經驗分享，免街方摸門釘。
+        </p>
+
+        <div class="iframe_cont">
+          <div class="flourish-embed flourish-chart" data-src="visualisation/4562382"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        </div>
+
+        <p>此外，網上當然亦有不少
+          <a href="https://www.facebook.com/groups/938631536168133/permalink/3574378405926753" target="_blank" rel="noopener">鼓勵互勉的說話</a>
+          ，着同區街坊
+          <a href="https://www.facebook.com/groups/938631536168133/permalink/3542298079134786" target="_blank" rel="noopener">注意衞生</a>
+          ，自救但別過度恐慌，又
+          <a href="https://www.facebook.com/groups/938631536168133/permalink/3548293768535217" target="_blank" rel="noopener">稱讚當區區議員</a>
+          在疫情下盡責守護社區，是疫情下的一絲溫暖。
+        </p>
+
+
       </article>
     </section>
+
+
+    <section class="ending">
+      <article class="container">
+        <p>
+          <a href="district-part-4.html">下一頁：第四波疫情</a>
+        </p>
+      </article>
+    </section>
+
+
+
   </main>
 
   <footer></footer>
 </div>
 
 <!-- Vendor -->
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js" integrity="sha512-C2RveGuPIWqkaLAluvoxyiaN1XYNe5ss11urhZWZYBUA9Ydgj+hfGKPcxCzTwut1/fmjEZR7Ac35f2aycT8Ogw==" crossorigin="anonymous"></script>
@@ -455,13 +496,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js" integrity="sha512-dmLpQXesGDP0ZM/s8zGKQU3Xlbix57QfwFNFh+BY5Ad/afObQ/lBo200mHWuHu8LOoI7tlK09yP3L/4DjdQ5Xw==" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/scrollama@2.2.1/build/scrollama.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
 <script src="https://unpkg.com/d3-simple-slider"></script>
-<script src="assets/js/jquery.CalendarHeatmap.min.js"></script>
 
 <script src="assets/js/util.js?v=202002031749"></script>
 <script src="assets/js/main.js" async></script>
-<script src="assets/js/calendar.js" async></script>
+
+
+
+<!-- page specific-->
+<script type='text/javascript' id='neve-script-js-extra'>
+  /* <![CDATA[ */
+  var NeveProperties = {
+    "ajaxurl": "0000",
+    "nonce": "0000",
+    "isRTL": "",
+    "isCustomize": ""
+  };
+  /* ]]> */
+</script>
+
+<script type='text/javascript'
+src='assets/js/frontend.js?ver=2.9.1'
+id='neve-script-js' async></script>
 </body>
 </html>
