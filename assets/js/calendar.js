@@ -76,25 +76,39 @@ const tooltip = d3.select('#tooltip');
 
   const months = d3.timeMonth.range(d3.timeMonth.floor(minDate), maxDate, 1);
 
-  // Drawing Legend
+  // Drawing 
+  const legendLabelMap = {
+    "1": "全日關閉",
+    "2": "提早關門"
+  };
+  const legendColorMap = {
+    "1": "#000000",
+    "2": "#666666"
+  };
   const legendWidth = (cellSize + labelSize) * forecastWordMap.domain().length
   const legend = d3.select('#legend')
     .append('svg')
     .attr('width', legendWidth)
-    .attr('height', cellSize * 7 + marginSize * 8)
+    .attr('height', 65)
 
   const actualLegend = legend.append('g');
 
   actualLegend.selectAll('rect')
     .data(forecastWordMap.domain())
     .enter().append('rect')
-    .attr('x', (_d, i) => (cellSize + labelSize) * i)
+    .attr('x', (_d, i) => (12 + labelSize) * i)
     .attr('y', cellSize + marginSize)
     .attr('rx', rectRadius)
     .attr('ry', rectRadius)
-    .attr('width', cellSize)
-    .attr('height', cellSize)
-    .attr('fill', (d) => forecastInterpolate(forecastWordMap(d)))
+    .attr('width', 12)
+    .attr('height', 12)
+    .attr('fill', (d) => {
+      if ("" === d) {
+        return "#c8d7e1"
+      } else {
+        return legendColorMap[d]
+      }
+    })
 
   actualLegend.selectAll('text.label')
     .data(forecastWordMap.domain())
@@ -102,9 +116,15 @@ const tooltip = d3.select('#tooltip');
     .classed('label', true)
     .attr('dominant-baseline', 'middle')
     .attr('font-size', 12)
-    .attr('x', (_d, i) => (cellSize + labelSize) * i + cellSize + labelPadding )
-    .attr('y', cellSize + marginSize + cellSize / 2)
-    .text((d) => d)
+    .attr('x', (_d, i) => (12 + labelSize) * i + 12 + labelPadding )
+    .attr('y', cellSize + marginSize + 12 / 2 + 2)
+    .text((d) => {
+      if ("" === d) {
+        return "正常營業"
+      } else {
+        return legendLabelMap[d]
+      }
+    })
 
   actualLegend.append('text')
     .attr('dominant-baseline', 'middle')

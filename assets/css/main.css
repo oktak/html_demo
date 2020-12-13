@@ -35,7 +35,10 @@ section:nth-child(2n) {
   background-color: #FFF;
 }
 #intro {
-  margin-bottom: 320px;
+  /* margin-bottom: 320px; */
+}
+.life_is_sick #intro {
+  text-align: center;
 }
 section.ending {
   min-height: 0;
@@ -44,7 +47,7 @@ section.ending {
 
 
 /* Scollma */
-#scrolly {
+/* #scrolly {
   position: relative;
   background-color: #f3f3f3;
   padding: 1rem;
@@ -108,7 +111,7 @@ figure p {
 .graph {
   width: 100%;
   position: absolute;
-}
+} */
 
 /* Scrollma end */
 
@@ -137,10 +140,10 @@ figure p {
   background-color: #a6c96a !important;
 }
 .custom-2 {
-  background-color: #666666 !important; /* #5cb85c */
+  background-color: #000000 !important; /* #5cb85c */
 }
 .custom-3 {
-  background-color: #000000 !important; /* #00753a */
+  background-color: #666666 !important; /* #00753a */
 }
 .custom-4 {
   background-color: #c8d7e1 !important; /* #c8d7e1 */
@@ -178,7 +181,7 @@ figure p {
   #heatmap {
     width: 800px;
     height: 100px;
-    margin: 210px 0 0;
+    margin: 150px 0 0;
     transform: rotate(90deg);
     transform-origin: 100% 0;
     float: right;
