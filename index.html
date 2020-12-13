@@ -64,6 +64,8 @@
 
 <!-- CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel='stylesheet' href='assets/css/neve-style.min.css' type='text/css' media='all' />
 <link rel='stylesheet' href='assets/css/neve-inline.css' type='text/css' media='all' />
@@ -322,12 +324,13 @@
   <main class="life_is_sick" id="scrolly">
     <section id="intro">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
-      <div class="color-filter"></div>
       <article class="container">
-        <h1 class="intro__hed">疫情下的生活</h1>
-        <p class="intro__dek">
-          香港人這一年過得如何？
-        </p>
+        <div class="intro_title_cont">
+          <h1 class="intro__hed">疫情下的生活</h1>
+          <p class="intro__dek">
+            香港人這一年過得如何？
+          </p>
+        </div>
       </article>
     </section>
 
@@ -423,7 +426,7 @@
         </p>
 
         <div class="iframe_cont">
-          <div class="flourish-embed flourish-chart" data-src="visualisation/4428901"></div>
+          <div class="flourish-embed flourish-chart" data-src="visualisation/4311538"></div>
         </div>
 
         <p class="d_footer">
@@ -444,17 +447,27 @@
         <p>HKTVmall七月的訂單總商品交易額高達6.2 億元，而該月的確診人數也是全年最高，其餘的月份只約4-5億元的交易額。
         </p>
 
-        <p>而在HKTVmall 售出的產品各個類別，所有類別都比去年期大幅上升，其中糧油雜貨、美容及健康類產品和家品傢俬類別等都比去年第一、二季度的已完成訂單的總商品交易額上升一倍。
-        </p>
+        <div class="iframe_cont">
+          <div class="flourish-embed flourish-chart" data-src="visualisation/4428901"></div>
+        </div>
 
         <p class="d_footer">
           <a class="d_ref_link" target="_blank" rel="noopener"
             href="https://ir.hktv.com.hk/pdf/announcement/c_1137_Oct2020_final.pdf">資料來源: HKTVmall 三至十月之未經審核營運數據</a>
         </p>
 
-        <div class="iframe_cont">
-          <img class="d_figure lazy" data-src="assets/img/hktvmall01.jpg" alt="htvmall" />
+        <p>而在HKTVmall 售出的產品各個類別，所有類別都比去年期大幅上升，其中糧油雜貨、美容及健康類產品和家品傢俬類別等都比去年第一、二季度的已完成訂單的總商品交易額上升一倍。
+        </p>
+
+        <div class="photo-gallery">
+	        <a href="assets/img/hktvmall01.jpg" data-size="1200x1307" data-med="assets/img/hktvmall01.jpg" data-med-size="1200x1307" class="photo-gallery__img--main">
+	          <img class="d_figure lazy" data-src="assets/img/hktvmall01.jpg" alt="" />
+          </a>
         </div>
+
+        <p class="d_footer">
+          資料來源: HKTVmall 中期業績報告
+        </p>
       </article>
     </section>
 
@@ -476,17 +489,16 @@
 
         <p>根據調查網站FlixPatrol的統計，直至11月15日，2020年香港區最熱門的十套NETFLIX 電視節目頭六位是韓劇，頭三位分別是《雖然是精神病但沒關係》 和《The King: 永遠的君主》 《青春紀錄》。另外，在電影方面，香港區最熱門的十套戲劇節目大多為歐美電影，頭三位分別是《禁錮之慾》 和《驚天營救》 《一級玩家》。
         </p>
+
+        <div class="iframe_cont">
+          <div class="infogram-embed" data-id="1c90b380-c5dd-4577-8504-aa20e26f7d40" data-type="interactive" data-title="十大香港地區最熱門的NETFLIX 電視劇"></div>
+        </div>
       </article>
     </section>
 
 
     <section class="main-content step" data-step="infogram-2">
       <article class="container">
-
-        <div class="iframe_cont">
-          <div class="infogram-embed" data-id="1c90b380-c5dd-4577-8504-aa20e26f7d40" data-type="interactive" data-title="十大香港地區最熱門的NETFLIX 電視劇"></div>
-        </div>
-
         <div class="iframe_cont">
           <div class="infogram-embed" data-id="6828375d-ef48-431d-ab3d-6c5e8d0c3af0" data-type="interactive" data-title="十大香港地區最熱門的NETFLIX 電影"></div>
         </div>
@@ -547,8 +559,6 @@
 
     <section class="main-content step" data-step="6-4397109">
       <article class="container">
-        <h2>星期六</h2>
-
         <p>但是Staycation都有一定感染風險，China Secret及港威酒店群組、梅窩Staycation等確診個案均涉及Staycation，政府於11月16日起將包括酒店在內的旅館列入599F章規管，酒店每個房間人數上限為4人。回顧疫情爆發以來，多個大型群組涉及餐廳進食、聚餐，私人聚會等，其中，疫情初期的酒吧及樂隊群組有103人確診，其後九龍東多間餐廳出現多人確診，11月份的跳舞群組有逾500人確診。
         </p>
 
@@ -559,7 +569,7 @@
     </section>
 
 
-    <section class="main-content">
+    <section class="main-content step" data-step="7-654711">
       <article class="container">
         <h2>星期日</h2>
 
@@ -570,192 +580,176 @@
         </p>
 
         <div class="iframe_cont">
-          <iframe class="lazy" data-src='https://flo.uri.sh/story/654711/embed' title='Interactive or visual content' frameborder='0' scrolling='no' style='width:100%;height:600px;'></iframe>
+          <!-- <div class="flourish-embed flourish-chart" data-src="visualisation/654711"></div> -->
+          <iframe class="lazy" data-src='https://flo.uri.sh/story/654711/embed' title='Interactive or visual content' frameborder='0' scrolling='no' style='width:100%;height:450px;'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'></div>
         </div>
       </article>
     </section>
 
 
-    <section class="main-content">
-      <article class="container">
-        <h2>星期日</h2>
-
-        <blockquote>
-          <p>由2019年的反修例風波，到2020年的新冠肺炎，香港人的生活和心情都不好過。長期留家抗疫，我都感到不
-            少壓力。</p>
-        </blockquote>
-
-        <p>疫情下不同群體的巿民都感到不同程度的壓力，青
-          協的調查指出2020年學生開學的壓力指數比往年的
-          高，此外，不同組織亦進行各類調查，均表示疫情下
-          長者的情緒受到負面影響。香港大學醫學院精神醫
-          學系團隊的調查顯示，逾7成人呈現中至高度抑鬱症
-          狀，而超過4成人有中至高度的創傷後壓力症狀。</p>
-
-        <p>圖顯示學生的開學壓力指數比2018年以往的高：</p>
-
-        <img class="d_figure lazy" data-src="assets/img/012_students.png" alt="Pressure" />
-        <p class="d_caption">Pressure</p>
-        <p class="d_footer">
-          <a class="d_ref_link" target="_blank" rel="noopener"
-            href="https://www.censtatd.gov.hk/hkstat/sub/sp200_tc.jsp?tableID=006&ID=0&productType=8">Pressure</a>
-        </p>
-      </article>
-    </section>
-
-
-    <section class="main-content">
-      <article class="container">
-        <h2>星期日</h2>
-
-
-        <p>不同群體的精神健康調查結果 (?)</p>
-
-        <img class="d_figure lazy" data-src="assets/img/013_other_reaction.png" alt="reactions" />
-        <p class="d_caption">reactions</p>
-        <p class="d_footer">
-          <a class="d_ref_link" target="_blank" rel="noopener"
-            href="https://www.censtatd.gov.hk/hkstat/sub/sp200_tc.jsp?tableID=006&ID=0&productType=8">reactions</a>
-        </p>
-      </article>
-    </section>
-
-
-<!--
-    <section class="main-content" class="hide">
-      <figure class="container">
-        <p>0</p>
-        <div class="graph hide">
-          <iframe src="https://flo.uri.sh/visualisation/4169611/embed" title="Interactive or visual content" scrolling="no" style="width:100%;height:600px;" frameborder="0"></iframe>
-        </div>
-        <div class="graph hide">g2</div>
-        <div class="graph hide">g3</div>
-        <div class="graph hide">g4</div>
-      </figure>
-
-      <article class="container">
-        <div class="step" data-step="1">
-          <p>STEP 1</p>
-        </div>
-        <div class="step" data-step="2">
-          <p>STEP 2</p>
-        </div>
-        <div class="step" data-step="3">
-          <p>STEP 3</p>
-        </div>
-        <div class="step" data-step="4">
-          <p>STEP 4</p>
-        </div>
-      </article>
-    </section>
--->
-
-
-    <section class="main-content">
-      <article class="container">
-        <h2>dummy </h2>
-        <p>dummy dummy dummy dummy</p>
-      </article>
-    </section>
-
-
-    <section id="questionaire">
+    <section class="main-content" id="questionaire">
       <article class="container">
         <h2>問卷</h2>
-        <p>收尾整個問題? e.g. 你在疫情下的心情如何? 之類?</p>
+        <p>由2019年的反修例風波，到2020年的新冠肺炎，香港人的生活和心情都不好過。長期留家抗疫，相信巿民都感到不少壓力。你的2020年又是怎樣？你在疫情下的心情如何?
+        </p>
+
+        <p>以1至10分，請選擇你今年的心情指數，1分代表非常差，10分代表非常好。
+        </p>
 
         <form action="">
           <div class="form-group">
-            <label for="q01">Example multiple select</label>
+            <label for="q01">心情指數</label>
             <select class="form-control" id="q01">
-              <option value="-1" selected>請選擇你所屬的年齡層</option>
-              <option value="0-12">0-12</option>
-              <option value="13-17">13-17</option>
-              <option value="18-25">18-25</option>
-              <option value="26-30">26-30</option>
-              <option value="31-45">31-45</option>
-              <option value="46-55">46-55</option>
-              <option value="56-64">56-64</option>
-              <option value="65+">65+</option>
+              <option value="-1" selected>心情指數</option>
+              <option value="1">1 分</option>
+              <option value="2">2 分</option>
+              <option value="3">3 分</option>
+              <option value="4">4 分</option>
+              <option value="5">5 分</option>
+              <option value="6">6 分</option>
+              <option value="7">7 分</option>
+              <option value="8">8 分</option>
+              <option value="9">9 分</option>
+              <option value="10">10分</option>
             </select>
           </div>
 
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="q02" id="q02-opt-1" value="A">
-            <label class="form-check-label" for="q02-opt-1">
-              A. 
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="q02" id="q02-opt-2" value="B">
-            <label class="form-check-label" for="q02-opt-2">
-              B. 
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="q02" id="q02-opt-3" value="C">
-            <label class="form-check-label" for="q02-opt-3">
-              C. 
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="q02" id="q02-opt-4" value="D">
-            <label class="form-check-label" for="q02-opt-4">
-              D. 
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="q02" id="q02-opt-5" value="E">
-            <label class="form-check-label" for="q02-opt-5">
-              E. 
-            </label>
+          <div class="form-group">
+            <label for="q02">年齡</label>
+            <select class="form-control" id="q02">
+              <option value="-1" selected>請選擇你所屬的年齡層</option>
+              <option value="0-18">&lt;18</option>
+              <option value="18-20">18-20</option>
+              <option value="21-30">21-30</option>
+              <option value="31-40">31-40</option>
+              <option value="41-50">41-50</option>
+              <option value="51-60">51-60</option>
+              <option value="60+">&gt;60</option>
+            </select>
           </div>
 
-          <button id="butnSubmit" >Submit</button>
+
+          <button id="butnSubmit">遞交及查看結果</button>
         </form>
       </article>
     </section>
 
 
-    <section id="result">
+    <section class="main-content">
+      <article class="container">
+        <h2 class="result hide">結果</h2>
+
+        <div class="score-1 hide">
+          <p>你的心情指數為 4 分，有 46% 的讀者與你有著相同的心情。疫情下巿民的生活都不容易，讓大家一起互相扶持，面對疫情。
+          </p>
+        </div>
+
+        <div class="score-2 hide">
+          <p>你的心情指數為 5 分，有 15% 的讀者與你有著相同的心情。
+          </p>
+        </div>
+
+        <div class="score-3 hide">
+          <p>恭喜你，你的心情指數為 9 分，有 3% 的讀者與你有著相同的心情。疫情下巿民的生活都不容易，請保持你的好心情，與身邊的人一起面對疫情。
+          </p>
+        </div>
+
+        <div class="photo-gallery hide">
+	        <a href="assets/img/senta.png" data-size="689x426" data-med="assets/img/senta.png" data-med-size="689x426" class="photo-gallery__img--main">
+	          <img class="d_figure lazy" data-src="assets/img/senta.png" alt="心情指數" />
+          </a>
+        </div>
+
+        <div class="age-1 hide">
+          <p>此外，疫情下不同群體的巿民都感到不同程度的壓力，青協的調查指出2020年學生開學的壓力指數比往年的高，右圖顯示學生的開學壓力指數比2018年以往的高：
+          </p>
+
+          <div class="iframe_cont">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/4385603"></div>
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+          </div>
+        </div>
+
+        <div class="age-2 hide">
+          <p>此外，香港大學醫學院精神醫學系團隊的調查顯示，經歷反修例運動及新冠肺炎疫情後，逾7成人呈現中至高度抑鬱症狀，而超過4成人有中至高度的創傷後壓力症狀，更有36%受訪者同時出現上述兩種精神健康問題症狀。2020年的港人更要注意自己的精神健康。
+          </p>
+
+          <div class="iframe_cont">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/-----"></div>
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+          </div>
+        </div>
+
+        <div class="age-3 hide">
+          <p>此外，不同組織亦進行各類調查，均表示疫情下長者的情緒受到負面影響。在疫情持續下，無論長者自身，還是照顧者，都要注意精神健康。
+          </p>
+
+          <div class="iframe_cont">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/4385743"></div>
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+          </div>
+        </div>
+      </article>
+    </section>
+
+
+    <section id="result" style="display: none;">
       <article class="container">
 
         <h2>結果</h2>
-
-        <p>答完有個初步結果</p>
 
         <div class="chart-container" style="position: relative; max-width: 450px; min-height: 255px; height:40vh; width:80vw">
           <canvas id="chart01"></canvas>
           <p class="text-center">chart 01</p>
         </div>
 
-        <div class="chart-container" style="position: relative; max-width: 450px; min-height: 255px; height:40vh; width:80vw">
-          <canvas id="chart02"></canvas>
-          <p class="text-center">chart 2</p>
-        </div>
-
-        <div class="chart-container" style="position: relative; max-width: 450px; min-height: 255px; height:40vh; width:80vw">
-          <canvas id="chart03"></canvas>
-          <p class="text-center">chart 3</p>
-        </div>
-        
-        
       </article>
     </section>
   </main>
 
   <footer></footer>
+
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div>
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        </button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        </button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Vendor -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js" integrity="sha512-C2RveGuPIWqkaLAluvoxyiaN1XYNe5ss11urhZWZYBUA9Ydgj+hfGKPcxCzTwut1/fmjEZR7Ac35f2aycT8Ogw==" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/intersection-observer@0.11.0/intersection-observer.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js" integrity="sha512-dmLpQXesGDP0ZM/s8zGKQU3Xlbix57QfwFNFh+BY5Ad/afObQ/lBo200mHWuHu8LOoI7tlK09yP3L/4DjdQ5Xw==" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/scrollama@2.2.1/build/scrollama.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.5.1,npm/popper.js@1.16.1,npm/bootstrap@4.5.3,npm/photoswipe@4.1.3,npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js,npm/d3@6.3.1,npm/intersection-observer@0.12.0/intersection-observer.min.js,npm/scrollama@2.2.1,npm/chart.js@2.9.4"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
 
 <script src="assets/js/util.js?v=202002031749"></script>

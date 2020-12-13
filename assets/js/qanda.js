@@ -8,11 +8,11 @@ function chartDonut (chart_id, labels, data, datalabels) {
 
   var chart = new Chart(ctx, {
     // The type of chart we want to create
-    type: 'doughnut',
+    type: 'bar',
 
     // The data for our dataset
     data: {
-      labels: labels || ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: labels || ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       datasets: [{
         label: datalabels || 'My First dataset',
         backgroundColor: ['rgb(255, 99, 132)', 'green'],
@@ -41,31 +41,95 @@ function displayResult () {
 
 function handleSubmit (e) {
   e.preventDefault()
+  $("#butnSubmit").attr("disable", true);
+  $(".demo-gallery.hide, .result.hide").removeClass("hide");
+  $(".score-1, .score-2, .score-3, .age-1, .age-2, .age-3").addClass("hide");
+
+  let q01ans = parseInt($("#q01").val(), 10);
+  let q02ans = $("#q02").val();
 
   let data = {
     type: "return",
     value: getAnonymousId(),
-    q1: $('#q01').val(),
-    q2: $('input[name="q02"]:checked').val(),
-    q3: "q1",
-    q4: "q1",
-    q5: "q1",
+    q1: q01ans,
+    q2: q02ans,
   }
 
-  console.log(data);
+  if (5 > q01ans) {
+    $('.score-1').removeClass('hide')
+  } else if (5 === q01ans) {
+    $('.score-2').removeClass('hide')
+  } else {
+    $('.score-3').removeClass('hide')
+  }
 
+  if ("0-18" === q02ans) {
+    $('.age-1').removeClass('hide')
+  } else if ("60+" === q02ans) {
+    $('.age-3').removeClass('hide')
+  } else {
+    $('.age-2').removeClass('hide')
+  }
+
+  console.log(`data prep`, data);
 
   fetch(G['GAPI'], {
     method: 'POST',
     body: JSON.stringify(data),
     mode: 'no-cors',
-    credentials: 'include', // include, *same-origin, omit
+    credentials: 'include',
     redirect: 'follow',
     headers: {
         'Content-Type': 'application/json;charset=utf-8',
     }
   }).then(response => {
     console.log("success:", response);
+  //   let data = [];
+  //   let data = [{
+  //     "name": "ts",
+  //     "index": ["2020-11-24 00:51:19", "2020-11-23 00:54:39", "2020-11-23 00:51:19"],
+  //     "data": [1, 1, 1]
+  // }, {
+  //     "name": "annoymous_id",
+  //     "index": ["2b27ab63-ea97-ebe7-2a75-beb220640dc6"],
+  //     "data": [3]
+  // }, {
+  //     "name": "q1",
+  //     "index": ["26-30", "65+"],
+  //     "data": [2, 1]
+  // }, {
+  //     "name": "q2",
+  //     "index": ["A", "B", "D"],
+  //     "data": [1, 1, 1]
+  // }, {
+  //     "name": "q3",
+  //     "index": ["q1"],
+  //     "data": [3]
+  // }, {
+  //     "name": "q4",
+  //     "index": ["q1"],
+  //     "data": [3]
+  // }, {
+  //     "name": "q5",
+  //     "index": ["q1"],
+  //     "data": [3]
+  // }, {
+  //     "name": "q6",
+  //     "index": [],
+  //     "data": []
+  // }]
+
+    let result = {};
+    result["q1"] = data.filter(o => o.name === "q1")
+
+    console.log(result["q1"]);
+
+
+    if (result["q1"].length) {
+      $("#result").show();
+      chartDonut("chart01", result["q1"][0]["index"], result["q1"][0]["data"], "hihi");
+    }
+
   })
   .catch(function (error) {
     console.log(error);
@@ -121,21 +185,11 @@ function init_qanda () {
 
     let result = {}
     result["q1"] = data.filter(o => o.name === "q1")
-    result["q2"] = data.filter(o => o.name === "q2")
-    result["q3"] = data.filter(o => o.name === "q3")
-    result["q4"] = data.filter(o => o.name === "q4")
-    result["q5"] = data.filter(o => o.name === "q5")
 
     console.log(result["q1"]);
 
     if (result["q1"].length) {
       chartDonut("chart01", result["q1"][0]["index"], result["q1"][0]["data"], "hihi")
-    }
-    if (result["q2"].length) {
-      chartDonut("chart02", result["q2"][0]["index"], result["q2"][0]["data"], "hihi")
-    }
-    if (result["q3"].length) {
-      chartDonut("chart03", result["q3"][0]["index"], result["q3"][0]["data"], "hihi")
     }
   })
   .catch(function (error) {

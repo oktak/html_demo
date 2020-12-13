@@ -1,12 +1,17 @@
 /* Common */
 .hide {
-  visibility: hidden;
+  display: none;
 }
 .show {
   visibility: visible;
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   color: #333333;
+}
+.iframe_cont {
+  min-width: 320px;
+  max-width: 75%;
+  margin: 0 auto;
 }
 /* Common end */
 
@@ -34,86 +39,42 @@ section {
 section:nth-child(2n) {
   background-color: #FFF;
 }
-#intro {
-  /* margin-bottom: 320px; */
-}
 .life_is_sick #intro {
   text-align: center;
+  position: relative;
+}
+.life_is_sick #intro .container {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.life_is_sick #intro .intro_title_cont {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+.life_is_sick #intro .intro__hed {
+  margin: -1.8rem 0 0;
 }
 section.ending {
   min-height: 0;
 }
+.life_is_sick #intro .el-background-overlay {
+  background-image: url("/html_demo/assets/img/first-intro.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  opacity: 1;
+  /* mix-blend-mode: overlay; */
+  /* transition: background 0.3s, border-radius 0.3s, opacity 0.3s; */
+}
 /* Section end */
-
-
-/* Scollma */
-/* #scrolly {
-  position: relative;
-  background-color: #f3f3f3;
-  padding: 1rem;
-}
-
-article {
-  position: relative;
-  padding: 0;
-  margin: 0 auto;
-}
-
-figure {
-  position: -webkit-sticky;
-  position: sticky;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  background-color: #8a8a8a;
-  z-index: 0;
-}
-
-figure p {
-  text-align: center;
-  padding: 1rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -moz-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 8rem;
-  font-weight: 900;
-  color: #fff;
-}
-
-.step {
-  margin: 0 auto 2rem auto;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.step:last-child {
-  margin-bottom: 0;
-}
-
-.step.is-active p {
-  background-color: goldenrod;
-  color: #3b3b3b;
-}
-
-.step p {
-  text-align: center;
-  padding: 1rem;
-  font-size: 1.5rem;
-  background-color: #3b3b3b;
-}
-
-.graph {
-  width: 100%;
-  position: absolute;
-} */
-
-/* Scrollma end */
 
 /* Calendar */
 .option_cont {
