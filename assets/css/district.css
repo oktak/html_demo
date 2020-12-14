@@ -4,6 +4,7 @@
   top: 0;
   left: 0;
   position: absolute;
+  z-index: 1;
 }
 
 .district_landing {
@@ -42,13 +43,22 @@
   height: 100%;
   display: block;
   position: absolute;
-  background-image: radial-gradient(rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0));
+  z-index: 5;
+  background-image: radial-gradient(rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 55%, rgba(255,255,255,0));
   background-position: 50% 50%;
 }
 
 .district_landing #intro {
   margin: 0;
   padding: 10vh 0;
+}
+
+.district_landing #intro .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
 }
 
 .district_landing #intro ~ section h2 {

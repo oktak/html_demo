@@ -1,7 +1,8 @@
 var G = {}
 G['entrySource'] = ''
-G['trackingCate'] = 'hk01review2020'
-G['GAPI'] = "https://script.google.com/macros/s/AKfycbx2UQSIMuHI56nSyKeMgUgUnwARxbj8ZUUV_ojyVruIrgxcSXgL/exec"
+G['trackingCate'] = 'covidreview2020'
+G['GAPI'] = "https://script.google.com/macros/s/AKfycbw46x1rcSY_7S2t1qNcS7oFhoY-CBgmvd9xNrwUkhBRy_4Y56ucfQtQwg/exec";
+G['AAPI'] = "https://datanews.hktester.com/widget/covidreview/assets/js/result.json?" + (new Date()).getTime();
 
 /**
  * hk01 Tracking::detectSource
@@ -26,7 +27,7 @@ function detectSource (callback) {
 
   console.log(entrySource + ' | initialID: ' + initialID);
 
-  fireEvent(`${G['trackingCate']}_landing`, 'view', {
+  fireEvent(`${G['trackingCate']}`, 'view_landing', {
       'start_mode': entrySource,
       'anonymous_id': getAnonymousId(),
       'session_id': getSessionId(),
@@ -76,13 +77,19 @@ function init() {
 
       let embedtype = response.element.getAttribute('data-step');
 
+      fireEvent(`${G['trackingCate']}`, 'view_chart', {
+        'chart_id': embedtype,
+        'anonymous_id': getAnonymousId(),
+        'session_id': getSessionId(),
+        'ts': Date.now()
+      });
+
       if (-1 === embedtype.indexOf("infogram")) {
         !function (e, i, n, s) {
           var t = "flourishEmbeds";
           var d = e.getElementsByTagName("script")[0];
           var o = e.createElement("script");
           o.async = 0, o.id = n, o.src = "https://public.flourish.studio/resources/embed.js", d.parentNode.insertBefore(o, d)
-          console.log(`FF`)
         } (document, 0, "flourish-async");
       } else {
         !function (e, i, n, s) {
@@ -102,6 +109,30 @@ function init() {
 
   // setup resize event
   window.addEventListener("resize", scroller.resize);
+
+  $(document).on('click', '#header-grid a', function (e) {
+    fireEvent(`${G['trackingCate']}`, 'click_menu_link', {
+      'target_url': e.target.getAttribute("href"),
+      'anonymous_id': getAnonymousId(),
+      'session_id': getSessionId(),
+      'ts': Date.now()
+    });
+  });
+  $(document).on('click', 'a.d_ref_link', function (e) {
+    fireEvent(`${G['trackingCate']}`, 'click_ext_link', {
+      'target_url': e.target.getAttribute("href"),
+      'anonymous_id': getAnonymousId(),
+      'session_id': getSessionId(),
+      'ts': Date.now()
+    });
+  });
+  $(document).on('click', '.site-logo a', function (e) {
+    fireEvent(`${G['trackingCate']}`, 'click_logo', {
+      'anonymous_id': getAnonymousId(),
+      'session_id': getSessionId(),
+      'ts': Date.now()
+    });
+  });
 }
 
 // kick things off
@@ -184,6 +215,13 @@ detectSource(init);
         e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
         var eTarget = e.target || e.srcElement;
+
+        fireEvent(`${G['trackingCate']}`, 'click_gallery', {
+          'target_url': eTarget.getAttribute("data-src"),
+          'anonymous_id': getAnonymousId(),
+          'session_id': getSessionId(),
+          'ts': Date.now()
+        });
 
         var clickedListItem = closest(eTarget, function(el) {
             return el.tagName === 'A';

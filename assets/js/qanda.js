@@ -1,5 +1,5 @@
 
-function chartDonut (chart_id, labels, data, datalabels) {
+function chartBar (chart_id, labels, data, datalabels) {
   var el = document.getElementById(chart_id);
   if (!el) {
     return;
@@ -15,7 +15,7 @@ function chartDonut (chart_id, labels, data, datalabels) {
       labels: labels || ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
       datasets: [{
         label: datalabels || 'My First dataset',
-        backgroundColor: ['rgb(255, 99, 132)', 'green'],
+        backgroundColor: ["rgba(255, 99, 132, 0.2)","rgba(255, 159, 64, 0.2)","rgba(255, 205, 86, 0.2)","rgba(75, 192, 192, 0.2)","rgba(54, 162, 235, 0.2)","rgba(153, 102, 255, 0.2)","rgba(201, 203, 207, 0.2)"],"borderColor":["rgb(255, 99, 132)","rgb(255, 159, 64)","rgb(255, 205, 86)","rgb(75, 192, 192)","rgb(54, 162, 235)","rgb(153, 102, 255)","rgb(201, 203, 207)"],
         // borderColor: 'rgb(255, 99, 132)',
         data: data || [0, 10, 5, 2, 20, 30, 45]
       }]
@@ -34,19 +34,50 @@ function chartDonut (chart_id, labels, data, datalabels) {
  * @param {*} callback 
  */
 function displayResult () {
-
+  fetch(G['AAPI'])
+  .then(response => {
+    return response.json()
+  })
+  .then(data => {
+    console.log(data)
+    if (data.data.length) {
+      $("#result").show();
+      chartBar("chart01", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], data.data, "心情指數");
+    }
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 }
 
-
-
 function handleSubmit (e) {
-  e.preventDefault()
-  $("#butnSubmit").attr("disable", true);
-  $(".demo-gallery.hide, .result.hide").removeClass("hide");
-  $(".score-1, .score-2, .score-3, .age-1, .age-2, .age-3").addClass("hide");
+  e.preventDefault();
 
   let q01ans = parseInt($("#q01").val(), 10);
   let q02ans = $("#q02").val();
+
+  // Validation
+  let isValid = true;
+  console.log(`ans`, q01ans, q02ans)
+  if (-1 === q01ans) {
+    $('[for="q01"] .warning').removeClass("hide");
+    isValid = false;
+  }
+  if ("-1" === q02ans) {
+    $('[for="q02"] .warning').removeClass("hide");
+    isValid = false;
+  }
+  if ($("#butnSubmit").attr("disabled")) {
+    isValid = false;
+  }
+
+  if (!isValid) {
+    return false;
+  }
+
+  $("#butnSubmit").attr("disabled", true).attr("aria-disabled", true).addClass("btn-secondary");
+  $(".demo-gallery.hide, .result.hide, #qresult.hide").removeClass("hide");
+  $(".score-1, .score-2, .score-3, .age-1, .age-2, .age-3").addClass("hide");
 
   let data = {
     type: "return",
@@ -54,6 +85,16 @@ function handleSubmit (e) {
     q1: q01ans,
     q2: q02ans,
   }
+
+  fireEvent(`${G['trackingCate']}`, 'submit_form', {
+    'data': JSON.stringify({
+      q1: q01ans,
+      q2: q02ans
+    }),
+    'anonymous_id': getAnonymousId(),
+    'session_id': getSessionId(),
+    'ts': Date.now()
+  });
 
   if (5 > q01ans) {
     $('.score-1').removeClass('hide')
@@ -82,54 +123,10 @@ function handleSubmit (e) {
     headers: {
         'Content-Type': 'application/json;charset=utf-8',
     }
-  }).then(response => {
-    console.log("success:", response);
-  //   let data = [];
-  //   let data = [{
-  //     "name": "ts",
-  //     "index": ["2020-11-24 00:51:19", "2020-11-23 00:54:39", "2020-11-23 00:51:19"],
-  //     "data": [1, 1, 1]
-  // }, {
-  //     "name": "annoymous_id",
-  //     "index": ["2b27ab63-ea97-ebe7-2a75-beb220640dc6"],
-  //     "data": [3]
-  // }, {
-  //     "name": "q1",
-  //     "index": ["26-30", "65+"],
-  //     "data": [2, 1]
-  // }, {
-  //     "name": "q2",
-  //     "index": ["A", "B", "D"],
-  //     "data": [1, 1, 1]
-  // }, {
-  //     "name": "q3",
-  //     "index": ["q1"],
-  //     "data": [3]
-  // }, {
-  //     "name": "q4",
-  //     "index": ["q1"],
-  //     "data": [3]
-  // }, {
-  //     "name": "q5",
-  //     "index": ["q1"],
-  //     "data": [3]
-  // }, {
-  //     "name": "q6",
-  //     "index": [],
-  //     "data": []
-  // }]
-
-    let result = {};
-    result["q1"] = data.filter(o => o.name === "q1")
-
-    console.log(result["q1"]);
-
-
-    if (result["q1"].length) {
-      $("#result").show();
-      chartDonut("chart01", result["q1"][0]["index"], result["q1"][0]["data"], "hihi");
-    }
-
+  })
+  .then(response => {
+    // Load data and prepare charts
+    displayResult();
   })
   .catch(function (error) {
     console.log(error);
@@ -138,67 +135,14 @@ function handleSubmit (e) {
   return false
 }
 
+function handleChange (e) {
+  $('.warning:not(.hide)').addClass("hide");
+}
 
 function init_qanda () {
-
-  // Load data and prepare charts
-  // fetch JSON with timesatamp
-  fetch("https://schema.org/", {
-    method: 'GET',
-    mode: 'no-cors',
-    credentials: 'include', // include, *same-origin, omit
-    redirect: 'follow',
-  }).then(response => {
-    let data = [{
-        "name": "ts",
-        "index": ["2020-11-24 00:51:19", "2020-11-23 00:54:39", "2020-11-23 00:51:19"],
-        "data": [1, 1, 1]
-    }, {
-        "name": "annoymous_id",
-        "index": ["2b27ab63-ea97-ebe7-2a75-beb220640dc6"],
-        "data": [3]
-    }, {
-        "name": "q1",
-        "index": ["26-30", "65+"],
-        "data": [2, 1]
-    }, {
-        "name": "q2",
-        "index": ["A", "B", "D"],
-        "data": [1, 1, 1]
-    }, {
-        "name": "q3",
-        "index": ["q1"],
-        "data": [3]
-    }, {
-        "name": "q4",
-        "index": ["q1"],
-        "data": [3]
-    }, {
-        "name": "q5",
-        "index": ["q1"],
-        "data": [3]
-    }, {
-        "name": "q6",
-        "index": [],
-        "data": []
-    }]
-
-    let result = {}
-    result["q1"] = data.filter(o => o.name === "q1")
-
-    console.log(result["q1"]);
-
-    if (result["q1"].length) {
-      chartDonut("chart01", result["q1"][0]["index"], result["q1"][0]["data"], "hihi")
-    }
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-
-
   // Handlers
   $("#butnSubmit").on("click", handleSubmit);
+  $("select").on("change", handleChange);
 }
 
 init_qanda();

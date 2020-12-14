@@ -6,7 +6,14 @@ $(function () {
       let el = $('#district_senta');
 
       if (el.length) {
-        let html = `<img class="senta_img" src="/html_demo/assets/img/output_${val}.png" alt="" />`
+        fireEvent(`${G['trackingCate']}`, 'click_district', {
+          'chart_id': val,
+          'anonymous_id': getAnonymousId(),
+          'session_id': getSessionId(),
+          'ts': Date.now()
+        });
+
+        let html = `<img class="senta_img" src="assets/img/output_${val}.png" alt="" />`
         $('#district_senta').html(html)
       }
     }
