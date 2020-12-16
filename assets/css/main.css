@@ -6,6 +6,10 @@
 .hide {
   display: none;
 }
+.hide-height {
+  height: 0;
+  overflow: hidden;
+}
 .show {
   visibility: visible;
 }
@@ -88,14 +92,45 @@ section:nth-child(2n) {
 section.ending {
   min-height: 0;
 }
-.life_is_sick #intro .el-background-overlay {
-  background-image: url("/html_demo/assets/img/first-intro.jpg");
+.life_is_sick :not(#bg-preface) .el-background-overlay {
+  max-height: 500px;
+  height: 100vh;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 100%;
   background-position: 50% 50%;
   opacity: 1;
-  /* mix-blend-mode: overlay; */
-  /* transition: background 0.3s, border-radius 0.3s, opacity 0.3s; */
+  position: relative;
+}
+.life_is_sick #intro .el-background-overlay {
+  max-height: 500px;
+  height: 100vh;
+  background-image: url("../img/bg-00-intro.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: 50% 50%;
+  opacity: 1;
+  position: absolute;
+}
+.life_is_sick #bg-01 .el-background-overlay {
+  background-image: url("../img/bg-01-mon.jpg");
+}
+.life_is_sick #bg-02 .el-background-overlay {
+  background-image: url("../img/bg-02-tue.jpg");
+}
+.life_is_sick #bg-03 .el-background-overlay {
+  background-image: url("../img/bg-03-wed.jpg");
+}
+.life_is_sick #bg-04 .el-background-overlay {
+  background-image: url("../img/bg-04-thu.jpg");
+}
+.life_is_sick #bg-05 .el-background-overlay {
+  background-image: url("../img/bg-05-fri.jpg");
+}
+.life_is_sick #bg-06 .el-background-overlay {
+  background-image: url("../img/bg-06-sat.jpg");
+}
+.life_is_sick #bg-07 .el-background-overlay {
+  background-image: url("../img/bg-07-sun.jpg");
 }
 .chart-container {
   min-width: 320px;
@@ -168,6 +203,16 @@ section.ending {
 }
 
 @media screen and (max-width: 500px) {
+  section {
+    padding: 5vh 0;
+  }
+  .life_is_sick :not(#bg-preface) .el-background-overlay {
+    max-width: 100vw;
+    max-height: 400px;
+    width: 100%;
+    height: 67vw;
+    background-size: 100% auto;
+  }
   #heatmap {
     width: 800px;
     height: 100px;

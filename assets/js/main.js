@@ -1,8 +1,8 @@
 var G = {}
 G['entrySource'] = ''
 G['trackingCate'] = 'covidreview2020'
-G['GAPI'] = "https://script.google.com/macros/s/AKfycbw46x1rcSY_7S2t1qNcS7oFhoY-CBgmvd9xNrwUkhBRy_4Y56ucfQtQwg/exec";
-G['AAPI'] = "https://datanews.hktester.com/widget/covidreview/assets/js/result.json?" + (new Date()).getTime();
+G['GAPI'] = "https://royal-cherry-cbdd.datanews.workers.dev/corsproxy/";
+G['AAPI'] = `assets/js/result.json?${(new Date()).getTime()}`;
 
 /**
  * hk01 Tracking::detectSource
@@ -45,14 +45,11 @@ function init() {
   let data = {
     type: "annoymous",
     value: getAnonymousId(),
-    url: "http://testme.com:5500/app2/index.html"
+    url: window.location.href + "?v0001",
   }
   fetch(G['GAPI'], {
     method: 'POST',
     body: JSON.stringify(data),
-    mode: 'no-cors',
-    credentials: 'include', // include, *same-origin, omit
-    redirect: 'follow',
     headers: {
         'Content-Type': 'application/json;charset=utf-8',
     }
@@ -68,44 +65,46 @@ function init() {
   lazyLoadInstance.update();
 
   const scroller = scrollama();
-  scroller
-    .setup({
-      step: ".step",
-    })
-    .onStepEnter((response) => {
-      console.log(`load flourish js!!`, response, response.element.getAttribute('data-step'));
+  if ($(".step").length) {
+    scroller
+      .setup({
+        step: ".step",
+      })
+      .onStepEnter((response) => {
+        console.log(`load flourish js!!`, response, response.element.getAttribute('data-step'));
 
-      let embedtype = response.element.getAttribute('data-step');
+        let embedtype = response.element.getAttribute('data-step');
 
-      fireEvent(`${G['trackingCate']}`, 'view_chart', {
-        'chart_id': embedtype,
-        'anonymous_id': getAnonymousId(),
-        'session_id': getSessionId(),
-        'ts': Date.now()
+        fireEvent(`${G['trackingCate']}`, 'view_chart', {
+          'chart_id': embedtype,
+          'anonymous_id': getAnonymousId(),
+          'session_id': getSessionId(),
+          'ts': Date.now()
+        });
+
+        if (-1 === embedtype.indexOf("infogram")) {
+          !function (e, i, n, s) {
+            var t = "flourishEmbeds";
+            var d = e.getElementsByTagName("script")[0];
+            var o = e.createElement("script");
+            o.async = 0, o.id = n, o.src = "https://public.flourish.studio/resources/embed.js", d.parentNode.insertBefore(o, d)
+          } (document, 0, "flourish-async");
+        } else {
+          !function (e, i, n, s) {
+            var t = "InfogramEmbeds";
+            var d = e.getElementsByTagName("script")[0];
+            if (window[t] && window[t].initialized) window[t].process && window[t].process();
+            else
+            if (!e.getElementById(n)) {
+                var o = e.createElement("script");
+                o.async = 0, o.id = n, o.src = "https://e.infogram.com/js/dist/embed-loader-min.js", d.parentNode.insertBefore(o, d)
+            }
+          } (document, 0, "infogram-async");
+        }
+      })
+      .onStepExit((response) => {
       });
-
-      if (-1 === embedtype.indexOf("infogram")) {
-        !function (e, i, n, s) {
-          var t = "flourishEmbeds";
-          var d = e.getElementsByTagName("script")[0];
-          var o = e.createElement("script");
-          o.async = 0, o.id = n, o.src = "https://public.flourish.studio/resources/embed.js", d.parentNode.insertBefore(o, d)
-        } (document, 0, "flourish-async");
-      } else {
-        !function (e, i, n, s) {
-          var t = "InfogramEmbeds";
-          var d = e.getElementsByTagName("script")[0];
-          if (window[t] && window[t].initialized) window[t].process && window[t].process();
-          else
-          if (!e.getElementById(n)) {
-              var o = e.createElement("script");
-              o.async = 0, o.id = n, o.src = "https://e.infogram.com/js/dist/embed-loader-min.js", d.parentNode.insertBefore(o, d)
-          }
-        } (document, 0, "infogram-async");
-      }
-    })
-    .onStepExit((response) => {
-    });
+  }
 
   // setup resize event
   window.addEventListener("resize", scroller.resize);

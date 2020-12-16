@@ -48,6 +48,13 @@ function displayResult () {
   .catch(function (error) {
     console.log(error);
   });
+
+  !function (e, i, n, s) {
+    var t = "flourishEmbeds";
+    var d = e.getElementsByTagName("script")[0];
+    var o = e.createElement("script");
+    o.async = 0, o.id = n, o.src = "https://public.flourish.studio/resources/embed.js", d.parentNode.insertBefore(o, d)
+  } (document, 0, "flourish-async-age");
 }
 
 function handleSubmit (e) {
@@ -77,7 +84,8 @@ function handleSubmit (e) {
 
   $("#butnSubmit").attr("disabled", true).attr("aria-disabled", true).addClass("btn-secondary");
   $(".demo-gallery.hide, .result.hide, #qresult.hide").removeClass("hide");
-  $(".score-1, .score-2, .score-3, .age-1, .age-2, .age-3").addClass("hide");
+  $(".score-1, .score-2, .score-3").addClass("hide");
+  $(".age-1, .age-2, .age-3").addClass("hide-height");
 
   let data = {
     type: "return",
@@ -105,11 +113,11 @@ function handleSubmit (e) {
   }
 
   if ("0-18" === q02ans) {
-    $('.age-1').removeClass('hide')
+    $('.age-1').removeClass('hide-height')
   } else if ("60+" === q02ans) {
-    $('.age-3').removeClass('hide')
+    $('.age-3').removeClass('hide-height')
   } else {
-    $('.age-2').removeClass('hide')
+    $('.age-2').removeClass('hide-height')
   }
 
   console.log(`data prep`, data);
@@ -117,9 +125,6 @@ function handleSubmit (e) {
   fetch(G['GAPI'], {
     method: 'POST',
     body: JSON.stringify(data),
-    mode: 'no-cors',
-    credentials: 'include',
-    redirect: 'follow',
     headers: {
         'Content-Type': 'application/json;charset=utf-8',
     }

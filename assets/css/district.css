@@ -84,7 +84,7 @@
 
 /* Landing Specific */
 .district_landing #intro .el-background-overlay {
-  background-image: url("/html_demo/assets/img/header.jpg");
+  background-image: url("../img/header.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -94,53 +94,53 @@
 }
 
 .district_landing #part-0 .el-background-overlay {
-  background-image: url("/html_demo/assets/img/part0_400.jpg");
+  background-image: url("../img/part0_400.jpg");
 }
 
 .district_landing #part-1 .el-background-overlay {
-  background-image: url("/html_demo/assets/img/part1_400.jpg");
+  background-image: url("../img/part1_400.jpg");
 }
 
 .district_landing #part-2 .el-background-overlay {
-  background-image: url("/html_demo/assets/img/part2_400.jpg");
+  background-image: url("../img/part2_400.jpg");
 }
 
 .district_landing #part-3 .el-background-overlay {
-  background-image: url("/html_demo/assets/img/part3_400.jpg");
+  background-image: url("../img/part3_400.jpg");
 }
 
 .district_landing #part-4 .el-background-overlay {
-  background-image: url("/html_demo/assets/img/part4_400.jpg");
+  background-image: url("../img/part4_400.jpg");
 }
 
 .district_landing #part-5 .el-background-overlay {
-  background-image: url("/html_demo/assets/img/part5_400.jpg");
+  background-image: url("../img/part5_400.jpg");
 }
 /* Landing Specific end */
 
 /* Banner Specific */
 .district_part_0 #banner .el-background-overlay {
-  background-image: url("/html_demo/assets/img/part0_160.jpg");
+  background-image: url("../img/part0_160.jpg");
 }
 
 .district_part_1 #banner .el-background-overlay {
-  background-image: url("/html_demo/assets/img/part1_160.jpg");
+  background-image: url("../img/part1_160.jpg");
 }
 
 .district_part_2 #banner .el-background-overlay {
-  background-image: url("/html_demo/assets/img/part2_160.jpg");
+  background-image: url("../img/part2_160.jpg");
 }
 
 .district_part_3 #banner .el-background-overlay {
-  background-image: url("/html_demo/assets/img/part3_160.jpg");
+  background-image: url("../img/part3_160.jpg");
 }
 
 .district_part_4 #banner .el-background-overlay {
-  background-image: url("/html_demo/assets/img/part4_160.jpg");
+  background-image: url("../img/part4_160.jpg");
 }
 
 .district_part_5 #banner .el-background-overlay {
-  background-image: url("/html_demo/assets/img/part5_160.jpg");
+  background-image: url("../img/part5_160.jpg");
 }
 /* Banner Specific end */
 
