@@ -5,6 +5,8 @@
   left: 0;
   position: absolute;
   z-index: 1;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .district_landing {
@@ -13,12 +15,22 @@
 }
 
 .district_landing section {
+  min-height: 160px;
+  max-width: 750px;
+  margin: 1rem auto;
+
   padding: 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   /* mix-blend-mode: overlay; */
   /* transition: background 0.3s, border-radius 0.3s, opacity 0.3s; */
+}
+.district_landing section.bdr-1 {
+  border: 1px solid #999;
+}
+.district_landing section .intro__hed {
+  margin: 0;
 }
 
 #banner .container,
@@ -49,8 +61,10 @@
 }
 
 .district_landing #intro {
-  margin: 0;
+  min-height: 400px;
+  margin: 0 auto;
   padding: 10vh 0;
+  border: 0;
 }
 
 .district_landing #intro .container {
@@ -86,7 +100,7 @@
 .district_landing #intro .el-background-overlay {
   background-image: url("../img/header.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% auto;
   background-position: 50% 50%;
   opacity: 1;
   /* mix-blend-mode: overlay; */
@@ -94,27 +108,27 @@
 }
 
 .district_landing #part-0 .el-background-overlay {
-  background-image: url("../img/part0_400.jpg");
+  background-image: url("../img/part0_160.jpg");
 }
 
 .district_landing #part-1 .el-background-overlay {
-  background-image: url("../img/part1_400.jpg");
+  background-image: url("../img/part1_160.jpg");
 }
 
 .district_landing #part-2 .el-background-overlay {
-  background-image: url("../img/part2_400.jpg");
+  background-image: url("../img/part2_160.jpg");
 }
 
 .district_landing #part-3 .el-background-overlay {
-  background-image: url("../img/part3_400.jpg");
+  background-image: url("../img/part3_160.jpg");
 }
 
 .district_landing #part-4 .el-background-overlay {
-  background-image: url("../img/part4_400.jpg");
+  background-image: url("../img/part4_160.jpg");
 }
 
 .district_landing #part-5 .el-background-overlay {
-  background-image: url("../img/part5_400.jpg");
+  background-image: url("../img/part5_160.jpg");
 }
 /* Landing Specific end */
 
@@ -142,6 +156,11 @@
 .district_part_5 #banner .el-background-overlay {
   background-image: url("../img/part5_160.jpg");
 }
+/* @media screen and (max-width: 500px) {
+  .district_landing .el-background-overlay {
+    background-size: auto 80%;
+  }
+} */
 /* Banner Specific end */
 
 /* Interactive */
@@ -159,4 +178,19 @@
   width: 70%;
   margin: 0 auto;
 }
-/**/
+/* Interactive end */
+
+/* Foot note */
+.footnote li {
+  margin: 0 0 0 1.5rem;
+  list-style: disc outside none;
+  font-size: 0.8rem;
+}
+/* Foot note end */
+
+/* Ending */
+.xending {
+  padding: 2rem 1rem 1rem;
+  background-color: #F0F0F0;
+}
+/* Ending end */
