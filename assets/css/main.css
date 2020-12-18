@@ -262,6 +262,9 @@ section.ending {
     transform: scale(-1,1) rotate(90deg);
   }
 }
+#legend {
+  text-align: center;
+}
 /* Calendar end */
 
 /* header */
@@ -285,6 +288,8 @@ header ~ main {
 }
 /* producer end */
 
-#legend {
+/* photo-gallery */
+.photo-gallery {
   text-align: center;
 }
+/* photo-gallery end */
