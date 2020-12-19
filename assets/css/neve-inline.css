@@ -252,7 +252,7 @@
   }
 
   .builder-item--logo .site-logo {
-    padding: 10px 0px 10px 0px;
+    padding: 0;
   }
 
   .builder-item--logo {
@@ -621,7 +621,7 @@
     }
 
     .builder-item--logo .site-logo {
-      padding: 10px 0px 10px 0px;
+      padding: 0;
     }
 
     .builder-item--logo {

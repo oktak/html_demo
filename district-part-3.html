@@ -66,6 +66,8 @@
 <!-- CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel='stylesheet' href='assets/css/neve-style.min.css' type='text/css' media='all' />
 <link rel='stylesheet' href='assets/css/neve-inline.css' type='text/css' media='all' />
@@ -339,7 +341,6 @@
     <section class="main-content">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <article class="container">
-        <h3 class="intro__hed">全民檢測惹爭議</h3>
 
         <p>夏天第三波疫情急速惡化，連續多天單日錄得逾百宗確診，病毒更殺入安老院舍，奪近百人性命。其後，政府推出臨時醫院、全民檢測等大型措施，惟亦惹來爭議。
         </p>
@@ -375,6 +376,13 @@
 
         <p>事實上，今年內所有提及「全民檢測」的3,200多則帖中，有逾1.8萬「嬲嬲」，而Like亦有逾2萬個，惟獲得較多讚的帖子，普遍是質疑相關計劃的效用。
         </p>
+
+        <div class="photo-gallery iframe_cont">
+	        <a href="assets/img/district-img/04.jpg" data-size="1024x683" data-med="assets/img/district-img/04.jpg" data-med-size="1024x683" class="photo-gallery__img--main" data-author="香港01">
+	          <img class="d_figure lazy" data-src="assets/img/district-img/04.jpg" alt="資料圖片/羅國輝攝" />
+            <figure class="d-caption">資料圖片/羅國輝攝</figure>
+          </a>
+        </div>
 
         <p>計劃推出前，特首林鄭月娥曾批評指，有「所謂專家、醫生」抹黑全民檢測計劃，是政治計算。當時，有帖子轉發前線醫生的訪問，指因不掌握計劃細節，難以推薦病人參加檢測，籲政府對反對聲音不要太敏感。帖子即獲不少網民按讚。此外，網上討論亦可見，不少人混淆「鼻咽」及「鼻腔加咽喉」兩種採樣，這或許側面反映出，政府對計劃解說不多，無法釋除市民疑慮之餘，亦難似號召更多人參與。
         </p>
@@ -466,9 +474,6 @@
 
     <section class="ending">
       <article class="container">
-        <p>
-          <a href="district-part-4.html">下一頁：第四波疫情</a>
-        </p>
       </article>
     </section>
 
@@ -477,6 +482,44 @@
   </main>
 
   <footer></footer>
+
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div>
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        </button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        </button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Vendor -->

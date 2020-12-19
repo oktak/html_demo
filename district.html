@@ -61,6 +61,8 @@
 <!-- CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel='stylesheet' href='assets/css/neve-style.min.css' type='text/css' media='all' />
 <link rel='stylesheet' href='assets/css/neve-inline.css' type='text/css' media='all' />
@@ -336,6 +338,13 @@
         <p>Facebook上的群組，又稱Group或「谷」，所有成員皆可發文，不似專頁般，僅版主可發布資訊。同時，地區群組所反映的，是可具體至地區、甚至屋苑維度，提供具社區特色的資訊，比較各區之異。
         </p>
 
+        <div class="photo-gallery iframe_cont">
+	        <a href="assets/img/district-img/01.jpg" data-size="1024x683" data-med="assets/img/district-img/01.jpg" data-med-size="1024x683" class="photo-gallery__img--main" data-author="香港01">
+	          <img class="d_figure lazy" data-src="assets/img/district-img/01.jpg" alt="資料圖片/羅君豪攝" />
+            <figure class="d-caption">資料圖片/羅君豪攝</figure>
+          </a>
+        </div>
+
         <p>《香港01》透過統計本港378個Facebook地區群組中，今年內的帖子及互動，並分析文本情感，嘗試了解疫下民情：市民如何回應疫情，不同時期下的網絡情緒，網絡討論如何反映市民的急切需要，市民如何利用網絡空間助人自助，以及網上討論究竟是「制止」還是「製造」恐慌、究竟是鼓勵「Fact check」還是加速「假資訊」的傳播？
         </p>
 
@@ -430,6 +439,44 @@
   </main>
 
   <footer></footer>
+
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div>
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        </button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        </button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Vendor -->

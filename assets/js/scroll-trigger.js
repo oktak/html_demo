@@ -16,7 +16,7 @@ $(function () {
 
     var figureHeight = window.innerHeight / 2;
     var figureMarginTop = (window.innerHeight - figureHeight) / 2;
-    figureMarginTop = 70;
+    figureMarginTop = 75;
 
     figure
       .css("height", figureHeight + "px")

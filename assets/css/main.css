@@ -19,7 +19,7 @@
 .iframe_cont {
   min-width: 320px;
   max-width: 75%;
-  margin: 0 auto;
+  margin: 1rem auto 1.5rem;
 }
 .warning {
   font-size: 85%;
@@ -37,6 +37,9 @@
 html, body {
   overflow-anchor: auto;
   font-family: system-ui, sans-serif;
+}
+.site-logo {
+  line-height: 1;
 }
 .main-content
 button {
@@ -108,9 +111,12 @@ section:nth-child(2n) {
 section.ending {
   min-height: 0;
 }
+.life_is_sick #bg-preface {
+  min-height: 250px;
+}
 .life_is_sick :not(#bg-preface) .el-background-overlay {
   max-height: 500px;
-  height: 100vh;
+  height: 500px;
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: 50% 50%;
@@ -118,7 +124,7 @@ section.ending {
   position: relative;
 }
 .life_is_sick #intro .el-background-overlay {
-  max-height: 500px;
+  max-height: 450px;
   height: 100vh;
   background-image: url("../img/bg-00-intro.jpg");
   background-repeat: no-repeat;
@@ -218,14 +224,20 @@ section.ending {
   text-align: left;
 }
 
+@media screen and (max-width: 750px) {
+  .life_is_sick :not(#bg-preface) .el-background-overlay {
+    height: calc((100vw - 30px) / 3 * 2);
+    background-size: 98% auto !important;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .district_landing #intro .el-background-overlay,
   .life_is_sick :not(#bg-preface) .el-background-overlay {
     max-width: 100vw;
     max-height: 400px;
     width: 100%;
-    height: 67vw;
-    background-size: 100% auto !important;
+    background-size: 95% auto !important;
   }
   #heatmap {
     width: 800px;
@@ -293,3 +305,12 @@ header ~ main {
   text-align: center;
 }
 /* photo-gallery end */
+
+.calendar #banner .el-background-overlay {
+  background-image: url("../img/closure-400.jpg");
+}
+
+#scrolly .flourish-embed {
+  max-width: 700px;
+  margin: 0 auto;
+}

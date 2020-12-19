@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://datanews.hk01.com/covidreview/sitemap.xml

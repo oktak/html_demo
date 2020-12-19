@@ -41,8 +41,8 @@
   position: relative;
   height: 100%;
 }
-
-.district_landing section a {
+/* Photo gallery */
+.district_landing section a:not(.photo-gallery__img--main) {
   width: 100%;
   height: 100%;
   padding: 10vh 0;
@@ -50,6 +50,12 @@
   position: absolute;
   text-decoration: none;
 }
+figure.d-caption {
+  margin-bottom: 1rem;
+  text-align: right;
+}
+/* Photo gallery end */
+
 .color-filter {
   width: 100%;
   height: 100%;
@@ -89,6 +95,7 @@
 }
 
 .main-content .container {
+  margin: 1rem auto;
   max-width: 750px;
 }
 

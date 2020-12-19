@@ -71,6 +71,92 @@
 <link rel='stylesheet' href='assets/css/neve-inline.css' type='text/css' media='all' />
 <link rel="stylesheet" href="assets/css/district.css">
 
+<style>
+  #scrolly {
+    position: relative;
+    /* background-color: #f3f3f3; */
+    padding: 1rem;
+    margin-bottom: 290px;
+  }
+
+  @media screen and (max-width: 500px) {
+    #scrolly {
+      margin-bottom: 1rem;
+    }
+  }
+
+  #scrolly article {
+    position: relative;
+    padding: 0;
+    max-width: 20rem;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 700px) {
+    #scrolly article {
+      position: relative;
+      padding: 0;
+      max-width: 18vw;
+      margin: 0;
+    }
+  }
+
+  #scrolly figure {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /* background-color: #8a8a8a; */
+    /* z-index: 150; */
+  }
+
+  #scrolly figure p {
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    font-weight: 900;
+    color: #fff;
+  }
+
+  #scrolly .step {
+    margin: 0 auto 2rem auto;
+    color: #fff;
+    /* background-color: rgba(0, 0, 0, 0.1); */
+  }
+
+  #scrolly .step:last-child {
+    margin-bottom: 0;
+  }
+
+  #scrolly .step.is-active p {
+    background-color: goldenrod;
+    color: #3b3b3b;
+  }
+
+  #scrolly .step p {
+    color: #444444;
+  }
+
+  #scrolly .step p.step-title {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #3b3b3b;
+    color: #fff;
+
+  }
+</style>
+
 <!-- Tracking -->
 <script src="https://www.googletagmanager.com/gtag/js"></script>
 <script src="https://tracking-lib.hk01.com/piwik/piwik.min.js"></script>
@@ -311,7 +397,7 @@
 
 
 
-  <main class="life_is_sick" id="scrolly">
+  <main class="life_is_sick">
     <section id="intro">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <div class="outer_cont">
@@ -345,7 +431,6 @@
     <section id="bg-01" class="main-content step" data-step="1-4428532">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <article class="container">
-        <h2>星期一</h2>
 
         <p>星期一是一周的首個上班日。
         </p>
@@ -353,8 +438,33 @@
         <p>在2020這一年，受新冠肺炎影響下，有部份香港人需要在家工作，大部份時間都是對著電子屏幕。可是，並不是人人都能夠在疫情之下繼續上班。政府統計處公布，7月至9月經季節性調整失業率為6.4%，屬近16年來的高位，而就業不足率則維持於3.8%。其中餐飲服務活動業的失業率急升至15.2%；而建造業失業率則上升至10.9%。
         </p>
 
-        <div class="iframe_cont">
+        <p>在9月至11月，就業不足率由3.8 稍為下跌至3.4。不過，勞工及福利局局長羅致光預期，因最近出現的本地第四波疫情，勞工市場的壓力預料會在短期內再次上升。
+        </p>
+
+        <!-- <div class="iframe_cont">
           <div class="flourish-embed flourish-chart" data-src="visualisation/4428532"></div>
+        </div> -->
+      </article>
+    </section>
+
+
+    <section id="scrolly">
+      <figure>
+        <div class="iframe_cont">
+	        <div class="flourish-embed flourish-chart" data-src="visualisation/4702078"></div>
+        </div>
+        <div class="iframe_cont">
+	        <div class="flourish-embed flourish-chart" data-src="visualisation/4702383"></div>
+        </div>
+      </figure>
+
+      <article>
+        <div class="step" data-step="1">
+          <p class="step-title">2019年</p>
+        </div>
+        <div class="step" data-step="2">
+          <p class="step-title">2020年</p>
+          </p>
         </div>
       </article>
     </section>
@@ -363,7 +473,6 @@
     <section id="bg-02" class="main-content step" data-step="2-4427821">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <article class="container">
-        <h2>星期二</h2>
 
         <p>星期二，工作沒受影響的打工仔仍要繼續上班。在限聚令、入境禁令和禁堂食令等生效後，很多行業從業員都因此失業。
         </p>
@@ -393,7 +502,6 @@
     <section id="bg-03" class="main-content step" data-step="3-4325169">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <article class="container">
-        <h2>星期三</h2>
 
         <p>到了星期三，約朋友外出晚飯抖抖氣，但疫情底下，這似乎並非易事。
         </p>
@@ -426,7 +534,6 @@
     <section id="bg-04" class="main-content step" data-step="4-4428901">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <article class="container">
-        <h2>星期四</h2>
 
         <p>到了星期四，又是時候為家中添補日用品，但因為疫情肆虐，不少況人都轉為網購，不用外出貨到家門。許多網上店舖亦趁此不時提供優惠，增加了市民在家消費的欲望。
         </p>
@@ -454,7 +561,6 @@
     <section id="bg-05" class="main-content step" data-step="infogram-1">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <article class="container">
-        <h2>星期五</h2>
 
         <p>終於到了星期五，一眾上班族終等有喘息空間。香港人在今年多了時間待在家中的時間。沒法外遊、電影院有限度服務以及社交活動的減少都令宅經濟加速發展。
         </p>
@@ -519,7 +625,6 @@
     <section id="bg-06" class="main-content step" data-step="6-4325967">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <article class="container">
-        <h2>星期六</h2>
 
         <p>長時間待在家，加上疫情下的壓力，不少人都很想外出放鬆一下，現在因為疫情關係無法出遊，有些人會考慮本地遊，酒店業等亦推出不同Staycation優惠。本港1月至9月份錄得約三百萬訪港旅客，比去年同期下跌逾92%，數據亦顯示今年酒店的入住率一度由1月的59%下降至2月的29%，其後訪港旅客人數持續低落，但酒店入住率開始回升。
         </p>
@@ -546,7 +651,6 @@
     <section id="bg-07" class="main-content step" data-step="7-654711">
       <div class="el-background-overlay optml-bg-lazyloaded"></div>
       <article class="container">
-        <h2>星期日</h2>
 
         <p>今年除了新冠肺炎持續外，社會運動亦是2019至2020年其中一件重大事件。2019年的下旬，每逢周日均有大大小小的遊行示威活動，今年的情況則因疫情和國安法生效而截然不同。
         </p>
@@ -734,6 +838,9 @@
 <script src="assets/js/util.js?v=202002031749"></script>
 <script src="assets/js/main.js?v=2020212141500"></script>
 <script src="assets/js/qanda.js" async></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js" integrity="sha512-dmLpQXesGDP0ZM/s8zGKQU3Xlbix57QfwFNFh+BY5Ad/afObQ/lBo200mHWuHu8LOoI7tlK09yP3L/4DjdQ5Xw==" crossorigin="anonymous"></script>
+<script src="assets/js/scroll-trigger.js?v=2020212141500"></script>
 
 <script type='text/javascript' id='neve-script-js-extra'>
   var NeveProperties = {
