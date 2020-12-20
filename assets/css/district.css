@@ -110,8 +110,6 @@ figure.d-caption {
   background-size: 100% auto;
   background-position: 50% 50%;
   opacity: 1;
-  /* mix-blend-mode: overlay; */
-  /* transition: background 0.3s, border-radius 0.3s, opacity 0.3s; */
 }
 
 .district_landing #part-0 .el-background-overlay {
@@ -163,11 +161,6 @@ figure.d-caption {
 .district_part_5 #banner .el-background-overlay {
   background-image: url("../img/part5_160.jpg");
 }
-/* @media screen and (max-width: 500px) {
-  .district_landing .el-background-overlay {
-    background-size: auto 80%;
-  }
-} */
 /* Banner Specific end */
 
 /* Interactive */

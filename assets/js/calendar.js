@@ -44,7 +44,6 @@ $(function () {
   // Function that change a color
   async function changeColor2() {
     var radioValue = $("input[name='placeButton']:checked");
-    // console.log(radioValue.val())
 
     fireEvent(`${G['trackingCate']}`, 'click_place', {
       'place': radioValue.val(),

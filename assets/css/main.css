@@ -232,6 +232,9 @@ section.ending {
 }
 
 @media screen and (max-width: 500px) {
+  .life_is_sick #intro {
+    min-height: 300px;
+  }
   .district_landing #intro .el-background-overlay,
   .life_is_sick :not(#bg-preface) .el-background-overlay {
     max-width: 100vw;
@@ -242,7 +245,7 @@ section.ending {
   #heatmap {
     width: 800px;
     height: 100px;
-    margin: 150px 0 0;
+    margin: 210px 0 0;
     transform: rotate(90deg);
     transform-origin: 100% 0;
     float: right;
