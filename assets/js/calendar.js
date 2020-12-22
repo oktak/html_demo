@@ -4,12 +4,16 @@ $(function () {
     const maxval = "2020-01-01";
     let response = await fetch(`assets/js/json/${place}.json`)
     let data = await response.json()
+    let daycount = 0;
     let newdata = Object.keys(data).map(o => {
       if (maxval === o) {
         return {
           date: maxval,
           count: 150
         }
+      }
+      if ("" !== data[o]) {
+        daycount++;
       }
       return {
         date: o,
@@ -39,6 +43,7 @@ $(function () {
     $("#heatmap").remove()
     $("#colorButton").after('<div id="heatmap" class=""></div>')
     $("#heatmap").CalendarHeatmap( newdata, options );
+    $(".affected").html(daycount);
   }
 
   // Function that change a color
