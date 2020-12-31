@@ -45,7 +45,6 @@
 .district_landing section a:not(.photo-gallery__img--main) {
   width: 100%;
   height: 100%;
-  padding: 10vh 0;
   display: block;
   position: absolute;
   text-decoration: none;
