@@ -243,9 +243,9 @@ section.ending {
     background-size: 95% auto !important;
   }
   #heatmap {
-    width: 800px;
+    width: calc(800px + 100px * 1);
     height: 100px;
-    margin: 220px 0 0;
+    margin: calc(220px + 80px * 1) 0 0;
     transform: rotate(90deg);
     transform-origin: 100% 0;
     float: right;

@@ -20,8 +20,13 @@ $(function () {
         count: ("" === data[o]) ? 0 : parseInt(data[o], 10) * 50
       }
     });
-    let options = {
+
+    const todayDate = new Date()
+    const thisYearMonth = todayDate.getMonth() + 1
+    const options = {
+      months: 12 + thisYearMonth,
       weekStartDay: 7,
+      lastMonth: thisYearMonth,
       coloring: "custom",
       labels: {
         days: true,
